@@ -3,8 +3,9 @@ import Player from "./Player"
 
 function App() {
   const [video, setVideo] = useState(0)
+  const [play, setPlay] = useState(false);
+  const myRef = React.createRef()
   const videos = [
-    "",
     "https://vimeo.com/741315350",
     "https://vimeo.com/741315359",
     "https://vimeo.com/741315366",
@@ -18,12 +19,13 @@ function App() {
         <h1>Case Parts Concierge</h1>
       </header>
       <p>This will be super cool, once we add some video!</p>
-      {video &&  <Player src={videos[video]} />}
-      <p onClick={()=> setVideo(1)}>Test1</p>
-      <p onClick={()=> setVideo(2)}>Test2</p>
-      <p onClick={()=> setVideo(3)}>Test3</p>
-      <p onClick={()=> setVideo(4)}>Test4</p>
-      <p onClick={()=> setVideo(5)}>Test5</p>
+      <Player src={videos[video]} play={play} myRef={myRef} endHandler={()=>setVideo((video + 1)%5)}/>
+      <p onClick={()=> setVideo(0)}>Test1</p>
+      <p onClick={()=> setVideo(1)}>Test2</p>
+      <p onClick={()=> setVideo(2)}>Test3</p>
+      <p onClick={()=> setVideo(3)}>Test4</p>
+      <p onClick={()=> setVideo(4)}>Test5</p>
+      <p onClick={()=> setPlay(!play)}>START</p>
     </div>
   );
 }

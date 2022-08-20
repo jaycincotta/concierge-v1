@@ -1,20 +1,23 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
-const Player = ({src}) => (
-  <div className="player-wrapper">
+function Player({src, play, myRef, endHandler}) {
+    return <div className="player-wrapper">
     <ReactPlayer
+      ref={myRef}
       url={src}
       className="react-player"
-      playing={true}
+      playing={play}
       muted={false}
       width="100%"
       height="100%"
       controls={true}
-      autoplay={true}
+      autoPlay={play}
       config={{ vimeo: { playerOptions: { playsinline: 1 } } }}
+      onStart={()=> console.log("Start")}
+      onEnded={endHandler ? endHandler : ()=> console.log("End")}
     />
   </div>
-);
+}
 
 export default Player;
