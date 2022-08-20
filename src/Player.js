@@ -8,7 +8,7 @@ const Player = ({src}) => (
       className="react-player"
       playing={true}
       width="98%"
-      height="98"
+      height="98%"
       controls={true}
       autoplay={true}
     />
