@@ -12,6 +12,11 @@ function App() {
     "https://vimeo.com/741315375",
     "https://vimeo.com/741315387"
   ]
+
+  function selectVideo(index) {
+    setVideo(index)
+    setPlay(true)
+  }
   return (
 
     <div className="App">
@@ -21,11 +26,11 @@ function App() {
       <Player src={videos[video]} play={play} myRef={myRef}
         endHandler={() => { setPlay(false); setVideo((video + 1) % 5) }} />
       <div className="content">
-        <p onClick={() => setVideo(0)}>Test1</p>
-        <p onClick={() => setVideo(1)}>Test2</p>
-        <p onClick={() => setVideo(2)}>Test3</p>
-        <p onClick={() => setVideo(3)}>Test4</p>
-        <p onClick={() => setVideo(4)}>Test5</p>
+        <p onClick={() => selectVideo(0)}>Test1</p>
+        <p onClick={() => selectVideo(1)}>Test2</p>
+        <p onClick={() => selectVideo(2)}>Test3</p>
+        <p onClick={() => selectVideo(3)}>Test4</p>
+        <p onClick={() => selectVideo(4)}>Test5</p>
         <p onClick={() => setPlay(!play)}>START</p>
       </div>
     </div>
