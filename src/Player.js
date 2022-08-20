@@ -7,8 +7,8 @@ const Player = ({src}) => (
       url={src}
       className="react-player"
       playing={true}
-      width="100%"
-      height="100%"
+      width="98%"
+      height="98"
       controls={true}
       autoplay={true}
     />
