@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import Player from "./Player"
 
 function App() {
@@ -16,16 +16,18 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <h1>Case Parts Concierge</h1>
+        <h1>CaseParts <span className="thin">Concierge</span></h1>
       </header>
-      <p>This will be super cool, once we add some video!</p>
-      <Player src={videos[video]} play={play} myRef={myRef} endHandler={()=>{setPlay(false); setVideo((video + 1)%5)}}/>
-      <p onClick={()=> setVideo(0)}>Test1</p>
-      <p onClick={()=> setVideo(1)}>Test2</p>
-      <p onClick={()=> setVideo(2)}>Test3</p>
-      <p onClick={()=> setVideo(3)}>Test4</p>
-      <p onClick={()=> setVideo(4)}>Test5</p>
-      <p onClick={()=> setPlay(!play)}>START</p>
+      <Player src={videos[video]} play={play} myRef={myRef}
+        endHandler={() => { setPlay(false); setVideo((video + 1) % 5) }} />
+      <div className="content">
+        <p onClick={() => setVideo(0)}>Test1</p>
+        <p onClick={() => setVideo(1)}>Test2</p>
+        <p onClick={() => setVideo(2)}>Test3</p>
+        <p onClick={() => setVideo(3)}>Test4</p>
+        <p onClick={() => setVideo(4)}>Test5</p>
+        <p onClick={() => setPlay(!play)}>START</p>
+      </div>
     </div>
   );
 }
