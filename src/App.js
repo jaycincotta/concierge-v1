@@ -19,7 +19,7 @@ function App() {
         <h1>Case Parts Concierge</h1>
       </header>
       <p>This will be super cool, once we add some video!</p>
-      <Player src={videos[video]} play={play} myRef={myRef} endHandler={()=>setVideo((video + 1)%5)}/>
+      <Player src={videos[video]} play={play} myRef={myRef} endHandler={()=>{setPlay(false); setVideo((video + 1)%5)}}/>
       <p onClick={()=> setVideo(0)}>Test1</p>
       <p onClick={()=> setVideo(1)}>Test2</p>
       <p onClick={()=> setVideo(2)}>Test3</p>
