@@ -4,6 +4,7 @@ import Player from "./Player"
 function App() {
   const [video, setVideo] = useState(0)
   const [play, setPlay] = useState(false);
+  const [ready, setReady] = useState(false)
   const myRef = React.createRef()
   const videos = [
     "https://vimeo.com/741315350",
@@ -24,7 +25,8 @@ function App() {
 
   function selectVideo(index) {
     setVideo(index)
-    setPlay(false)
+    setPlay(true)
+    setReady(false)
   }
 
   function handleOnStart(src) {
@@ -39,7 +41,7 @@ function App() {
 
   function handleOnReady(src) {
     findVideo(src, "Ready")
-    setPlay(true);
+    setReady(true);
   }
 
   return (
@@ -48,7 +50,7 @@ function App() {
       <header className="App-header">
         <h1>CaseParts <span className="thin">Concierge</span></h1>
       </header>
-      <Player src={videos[video]} play={play} myRef={myRef}
+      <Player src={videos[video]} play={play && ready} myRef={myRef}
         startHandler={handleOnStart} endHandler={handleOnEnded} readyHandler={handleOnReady}
       />
       <div className="content">

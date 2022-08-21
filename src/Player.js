@@ -32,7 +32,7 @@ function Player({ src, play, myRef, startHandler, endHandler, readyHandler }) {
             width="100%"
             height="100%"
             controls={true}
-            autoPlay={false}
+            autoPlay={play}
             config={{ vimeo: { playerOptions: { playsinline: 1 } } }}
             onStart={handleOnStart}
             onEnded={handleOnEnded}
