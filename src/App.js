@@ -36,7 +36,7 @@ function App() {
   function handleOnEnded(src) {
     findVideo(src, "Ended")
     setPlay(false);
-    setVideo((video + 1) % 5)
+    //setVideo((video + 1) % 5)
   }
 
   function handleOnReady(src) {
