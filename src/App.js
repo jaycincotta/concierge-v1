@@ -13,10 +13,35 @@ function App() {
     "https://vimeo.com/741315387"
   ]
 
+  function findVideo(src, verb) {
+    const index = videos.indexOf(src);
+    if (index < 0) {
+      console.log(verb + ": " + src + " not found")
+    } else {
+      console.log(verb + " video " + (index + 1))
+    }
+  }
+
   function selectVideo(index) {
     setVideo(index)
-    setPlay(true)
+    setPlay(false)
   }
+
+  function handleOnStart(src) {
+    findVideo(src, "Started")
+  }
+
+  function handleOnEnded(src) {
+    findVideo(src, "Ended")
+    setPlay(false);
+    setVideo((video + 1) % 5)
+  }
+
+  function handleOnReady(src) {
+    findVideo(src, "Ready")
+    setPlay(true);
+  }
+
   return (
 
     <div className="App">
@@ -24,14 +49,15 @@ function App() {
         <h1>CaseParts <span className="thin">Concierge</span></h1>
       </header>
       <Player src={videos[video]} play={play} myRef={myRef}
-        endHandler={() => { setPlay(false); setVideo((video + 1) % 5) }} />
+        startHandler={handleOnStart} endHandler={handleOnEnded} readyHandler={handleOnReady}
+      />
       <div className="content">
         <p onClick={() => selectVideo(0)}>Test1</p>
         <p onClick={() => selectVideo(1)}>Test2</p>
         <p onClick={() => selectVideo(2)}>Test3</p>
         <p onClick={() => selectVideo(3)}>Test4</p>
         <p onClick={() => selectVideo(4)}>Test5</p>
-        <p onClick={() => setPlay(!play)}>START</p>
+        <p onClick={() => setPlay(!play)}>{play ? "PAUSE" : "PLAY"}</p>
       </div>
     </div>
   );
