@@ -30,8 +30,9 @@ function App() {
   //   setReady(false)
   // }
 
-  function handleOnStart(src) {
-    findVideo(src, "Started")
+  function handleOnStart(src, isPlaying) {
+    findVideo(src, isPlaying ? "Started" : "Paused")
+    setPlay(isPlaying)
   }
 
   function handleOnEnded(src) {
@@ -75,21 +76,25 @@ function App() {
       <header className="App-header">
         <h1>CaseParts<span className="thin">Concierge</span></h1>
         {video < 5 && <div className="task">
-          <button onClick={clickCancel}>Cancel</button><h2>Getting Started</h2>
+          <button onClick={clickCancel}><i class="fa-solid fa-arrow-left-long" /></button><h2>Getting Started</h2>
         </div>}
       </header>
       <Player src={videos[video]} play={play && ready} myRef={myRef}
         startHandler={handleOnStart} endHandler={handleOnEnded} readyHandler={handleOnReady}>
-        <button disabled={video === 0 || video === 5} onClick={clickPrevious}>Previous</button>
-        <button onClick={clickReplay}>Replay</button>
-        <button onClick={clickPlayResume}>{play ? "Pause" : "Play"}</button>
-        <button disabled={video === 5} onClick={clickNext}>Next</button>
+        <button disabled={video === 0 || video === 5} onClick={clickPrevious}><i className="fa-solid fa-backward-step"></i></button>
+        <button onClick={clickReplay}><i className="fa-solid fa-arrow-rotate-left" /></button>
+        {!play && <button onClick={clickPlayResume}><i className="fa-solid fa-play" /></button>}
+        {play && <button onClick={clickPlayResume}><i className="fa-solid fa-play-pause" /></button>}
+        <button disabled={video === 5} onClick={clickNext}><i className="fa-solid fa-forward-step" /></button>
       </Player>
       <div className="content">
         {video === 0 && <div>
           <h1>Welcome!</h1>
-          <p>This app is optimized for you phone to make it fast and easy to request quotes.
-            You're in a quick getting started tutorial. Click Play for step-by-step instructions.</p>
+          <p>
+            This app is optimized for your phone to make it fast and easy to request quotes from Case Parts for commercial refrigeration parts.
+          </p><p>
+            Click Play for step-by-step instructions on using this app.
+          </p>
         </div>}
         {video === 1 && <div>
           <h1>Good Job!</h1>

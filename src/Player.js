@@ -6,7 +6,12 @@ function Player({ src, play, myRef, startHandler, endHandler, readyHandler, chil
 
     function handleOnStart() {
         if (startHandler) {
-            startHandler(src)
+            startHandler(src, true)
+        }
+    }
+    function handleOnPause() {
+        if (startHandler) {
+            startHandler(src, false)
         }
     }
 
@@ -36,7 +41,8 @@ function Player({ src, play, myRef, startHandler, endHandler, readyHandler, chil
                     controls={true}
                     autoPlay={true}
                     config={{ vimeo: { playerOptions: { playsinline: 1 } } }}
-                    onStart={handleOnStart}
+                    onPlay={handleOnStart}
+                    onPause={handleOnPause}
                     onEnded={handleOnEnded}
                     onReady={handleOnReady}
                 />
