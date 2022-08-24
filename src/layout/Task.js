@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { useNavigate } from "react-router-dom";
 import TaskStep from "./TaskStep"
 
 // This represents the set of steps associated with a task

@@ -67,7 +67,7 @@ export default function GettingStarted() {
         },
         step3,
         {
-            name: "// 4: Jay Tutorial 4",
+            name: "4: Jay Tutorial 4",
             video: videos[4],
             jsx: () => <ContactInfo />
         }
