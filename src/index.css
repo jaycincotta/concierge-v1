@@ -56,14 +56,14 @@ button:disabled {
   top: 0;
   left: 0;
 }
-.task {
+.playerPlus {
   margin: 4px 0 0 0;
   padding: 0 0 .25rem .5rem;
   /* background-color: #b4e6ff; */
   background-color:#055b83;
   /* color: black; */
 }
-.task h2 {
+.playerPlus h2 {
   margin: 0 0 0 .5rem;
   font-size: 1.25rem;
   font-variant: small-caps;
@@ -95,7 +95,7 @@ li {
 .menu button {
   font-weight: normal;
   font-size: 1rem;
-  text-align: left;
+  text-align: center;
   margin: .25rem;
   width: 100%;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import Player from "./Player"
+import { Link } from "react-router-dom"
+import Player from "./components/Player"
 import ContactInfo from "./components/ContactInfo";
 
 export default function Home() {
@@ -37,6 +38,16 @@ export default function Home() {
   function handleOnStart(src, isPlaying) {
     findVideo(src, isPlaying ? "Started" : "Paused")
     setPlay(isPlaying)
+  }
+
+  function handleOnPlay() {
+    console.log("PLAY")
+    setPlay(true)
+  }
+
+  function handleOnPause() {
+    console.log("PAUSE")
+    setPlay(false)
   }
 
   function handleOnEnded(src) {
@@ -82,19 +93,24 @@ export default function Home() {
     setVideo(4)
   }
 
+  const playIcon = <i className="fa-solid fa-play" />
+  const pauseIcon = <i className="fa-solid fa-play-pause" />
+  const playPauseIcon = play ? playIcon : pauseIcon
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>CaseParts<span className="thin">Concierge</span></h1>
-        {video < 5 && <div className="task">
+        {video < 5 && <div className="playerPlus">
           <button onClick={clickCancel}><i className="fa-solid fa-arrow-left-long" /></button><h2>Getting Started</h2>
         </div>}
-        {video === 5 && <div className="task">
+        {video === 5 && <div className="playerPlus">
           <h2>How can we help you today?</h2>
         </div>}
       </header>
       <Player src={videos[video]} play={play && ready} myRef={myRef}
-        startHandler={handleOnStart} endHandler={handleOnEnded} readyHandler={handleOnReady}>
+        playHandler={handleOnPlay} pauseHandler={handleOnPause} endHandler={handleOnEnded} readyHandler={handleOnReady}>
+        <button onClick={clickPlayResume}><i className={"fa-solid fa-play" + (play ? "-pause" : "")} /></button>
         <button disabled={video === 0 || video === 5} onClick={clickPrevious}><i className="fa-solid fa-backward-step"></i></button>
         <button onClick={clickReplay}><i className="fa-solid fa-arrow-rotate-left" /></button>
         {!play && <button onClick={clickPlayResume}><i className="fa-solid fa-play" /></button>}
@@ -137,8 +153,8 @@ export default function Home() {
         {video === 5 && <div>
           <h1>Main Menu</h1>
           <div className="menu">
-            <button>I need parts</button>
-            <button>I need help from a human being</button>
+            <button>Get a Parts Quote</button>
+            <Link to="/contact"><button>Contact Us</button></Link>
             <button onClick={() => setVideo(0)}>Getting Started Tutorial</button>
           </div>
 

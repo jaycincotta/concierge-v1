@@ -1,32 +1,7 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
-function Player({ src, play, myRef, startHandler, endHandler, readyHandler, children }) {
-    console.log("Player", src, play)
-
-    function handleOnStart() {
-        if (startHandler) {
-            startHandler(src, true)
-        }
-    }
-    function handleOnPause() {
-        if (startHandler) {
-            startHandler(src, false)
-        }
-    }
-
-    function handleOnEnded() {
-        if (endHandler) {
-            endHandler(src)
-        }
-    }
-
-    function handleOnReady() {
-        if (readyHandler) {
-            readyHandler(src)
-        }
-    }
-
+function Player({ src, play, myRef, playHandler, pauseHandler, endHandler, readyHandler, children }) {
     return (
         <div className="player">
             <div className={"player-fluid"}>
@@ -41,10 +16,10 @@ function Player({ src, play, myRef, startHandler, endHandler, readyHandler, chil
                     controls={true}
                     autoPlay={true}
                     config={{ vimeo: { playerOptions: { playsinline: 1 } } }}
-                    onPlay={handleOnStart}
-                    onPause={handleOnPause}
-                    onEnded={handleOnEnded}
-                    onReady={handleOnReady}
+                    onPlay={playHandler}
+                    onPause={pauseHandler}
+                    onEnded={endHandler}
+                    onReady={readyHandler}
                 />
             </div>
             <div className="player-controls">
