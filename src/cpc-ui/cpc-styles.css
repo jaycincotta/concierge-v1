@@ -30,6 +30,8 @@
 .cpc-logo-back {
     display: inline;
     height: var(--cpc-mainnav-height);
+    position: relative;
+    left: -1px; /* fixes bug on iOS */
 }
 
 .cpc-appname {
@@ -64,7 +66,7 @@
     margin: 0;
     padding: 0;
     text-align: right;
-    top: var(--cpc-mainnav-height);
+    top: calc(var(--cpc-mainnav-height) - 1px); /* fixes iOS bug */
     right: -4px;
     opacity: 1;
     min-width: 150px;
@@ -73,8 +75,7 @@
     border-radius: 0 0 0 12px;
     transition: 0.5s ease-in-out;
     max-height: 1000px;
-    font-size: 18px;
-    /* box-shadow: -1rem 1.5rem 1.5rem -.5rem rgb(255,255,255); */
+    font-size: 1.25rem;
     border-left: 1px solid white;
     border-bottom: 1px solid white;
   }
