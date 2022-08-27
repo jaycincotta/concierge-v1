@@ -3,8 +3,13 @@ import React from "react"
 import Task from "../layout/Task"
 
 export default function RequestQuote() {
+    const videos = [
+        "https://vimeo.com/741710210/c85fceae30"  // Jay Home 1
+    ]
+
     const steps = [
         {
+            video: videos[0],
             jsx: () => <>
                 <h1>Request Quote</h1>
                 <p className="voiceover">Your quote can include as many parts as you need but let's go through them one at a time. If you know the part number, use Part Search. Otherwise, pick the research option.</p>

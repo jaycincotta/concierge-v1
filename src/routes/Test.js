@@ -12,7 +12,7 @@ export default function Test() {
     //     "https://vimeo.com/741710210/c85fceae30"  // 5: Jay Home 1
     //   ]
 
-    const {find, pick, missing} = useVideo("Getting Started")
+    const {find, pick /*, missing */} = useVideo("Getting Started")
     const steps = [
         {
             name: "Jay Tutorial 1",
