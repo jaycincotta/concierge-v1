@@ -7,7 +7,7 @@ export default function Layout() {
         <ul>
             <li className="selectable"><Link to="/">Home</Link></li>
             <li className="selectable"><Link to="/quote">Quote</Link></li>
-            <li className="selectable"><Link to="/getting-started">Help</Link></li>
+            <li className="selectable"><Link to="/getting-started">Getting Started Tutorial Just for you!</Link></li>
             <li className="selectable"><Link to="/contact">Contact</Link></li>
         </ul>
     )
