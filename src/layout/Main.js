@@ -1,6 +1,6 @@
 import React from "react"
 import { Outlet, Link } from "react-router-dom"
-import AppHeader from "../cpc-ui/AppHeader"
+import AppHeader from "../cpc-shared/AppHeader"
 
 export default function Layout() {
     const menu = (
