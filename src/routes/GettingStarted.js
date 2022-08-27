@@ -1,5 +1,5 @@
 import React from "react"
-import TaskPlus from "../layout/Task"
+import Task from "../layout/Task"
 import ContactInfo from "../components/ContactInfo"
 export default function GettingStarted() {
     const params = new URLSearchParams(window.location.search)
@@ -74,6 +74,6 @@ export default function GettingStarted() {
     ]
 
     return (
-        <TaskPlus title="Test" steps={steps} />
+        <Task title="Getting Started" steps={steps} />
     )
 }

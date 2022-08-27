@@ -3,9 +3,10 @@
     --cpc-medium-blue: #0098dd;
     --cpc-dark-blue: #1380b1;
     --cpc-light-blue: #cee4f1;
+    --cpc-mainnav-height: 3.25rem;
 }
 .cpc-mainnav {
-    height: 4rem;
+    height: var(--cpc-mainnav-height);
     width: 100%;
 }
 .cpc-logo {
@@ -16,21 +17,21 @@
 }
 .cpc-logo-front {
     display:inline;
-    height: 3rem;
-    padding: .5rem;
+    height: calc(var(--cpc-mainnav-height) * 0.75);
+    padding: calc(var(--cpc-mainnav-height) * 0.125);
 }
 .cpc-logo-back {
     display:inline;
-    height: 4rem;
+    height: var(--cpc-mainnav-height);
 }
 
 .cpc-appname {
     display:inline-block;
     position:relative;
     background-color: black;
-    font-size: 1.5rem;
+    font-size: calc(var(--cpc-mainnav-height) * 0.375);
     font-weight: 100;
-    top: -1.5rem;
+    top: calc(var(--cpc-mainnav-height) * -0.375);
     padding-right: 0.5rem;
 }
 .cpc-company {

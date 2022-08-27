@@ -1,10 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Task from "../layout/Task"
+import pick from "../functions/pick"
 
 export default function HomePage() {
-    const pick = items => items[Math.floor(Math.random() * items.length)]
-
     const videos = [
         "https://vimeo.com/741710210/c85fceae30"  // Jay Home 1
     ]

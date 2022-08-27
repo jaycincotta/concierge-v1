@@ -1,12 +1,11 @@
 import * as React from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import Layout from './layout/Main'
 import HomePage from './routes/HomePage'
 import GettingStarted from './routes/GettingStarted';
-import ContactInfo from './components/ContactInfo'
-
-const Empty = () => <div>Nothing to see here!</div>
-const NotFound = () => <div>Nothing to see here!</div>
+import RequestQuote from './routes/RequestQuote';
+import ContactUs from './routes/ContactUs';
+import Test from './routes/Test';
 
 export default function App() {
     console.log("Render App")
@@ -15,9 +14,11 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route path="getting-started" element={<GettingStarted />} />
-                    <Route path="contact" element={<ContactInfo />} />
+                    <Route path="quote" element={<RequestQuote />} />
+                    <Route path="contact" element={<ContactUs />} />
+                    <Route path="test" element={<Test />} />
                     <Route index element={<HomePage />} />
-                    <Route path="*" element={<NotFound />} />
+                    <Route path="*" element={<Navigate replace to="/" />} />
                 </Route>
 
             </Routes>

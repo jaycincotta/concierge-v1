@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import TaskStep from "./TaskStep"
 
 // This represents the set of steps associated with a task
-export default function Task({ title, steps }) {
+export default function Task({ title, steps, firstStep }) {
     // steps is an array of obejcts, each with these properties:
-    //   video: URL of the video <-- REQUIRED
+    //   video: URL of the video
     //   jsx: function that returns the controls for this step
     //   name: optional display name of the step for console messages
     //   id: optional string identifier for a step, used with next/previous properties
@@ -15,7 +15,7 @@ export default function Task({ title, steps }) {
     //     - if undefined, next/prev step through the step array sequentially
     //     - any other value retults in next/prev being disabled
 
-    const [index, setIndex] = useState(0)
+    const [index, setIndex] = useState(firstStep ? firstStep : 0)
     const step = steps[index]
 
     // If index is within array bounds, return a function to setIndex, otherwise null
@@ -29,7 +29,7 @@ export default function Task({ title, steps }) {
             case 'number':
                 return validateIndex(Math.trunc(step.next))
             case 'string':
-                return validateIndex(steps.findIndex((x) => x.id == step.next))
+                return validateIndex(steps.findIndex((x) => x.id === step.next))
             case 'function':
                 return validateIndex(step.next())
             default:
@@ -43,9 +43,11 @@ export default function Task({ title, steps }) {
             case 'number':
                 return validateIndex(Math.trunc(step.previous))
             case 'string':
-                return validateIndex(steps.findIndex((x) => x.id == step.previous))
+                return validateIndex(steps.findIndex((x) => x.id === step.previous))
             case 'function':
                 return validateIndex(step.previous())
+            default:
+                return null
         }
     })()
 
