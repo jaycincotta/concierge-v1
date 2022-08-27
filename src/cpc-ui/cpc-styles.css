@@ -1,0 +1,40 @@
+
+:root {
+    --cpc-medium-blue: #0098dd;
+    --cpc-dark-blue: #1380b1;
+    --cpc-light-blue: #cee4f1;
+}
+.cpc-mainnav {
+    height: 4rem;
+    width: 100%;
+}
+.cpc-logo {
+    display:inline-block;
+    background-color: black;
+    height: 100%;
+    text-align: top;
+}
+.cpc-logo-front {
+    display:inline;
+    height: 3rem;
+    padding: .5rem;
+}
+.cpc-logo-back {
+    display:inline;
+    height: 4rem;
+}
+
+.cpc-appname {
+    display:inline-block;
+    position:relative;
+    background-color: black;
+    font-size: 1.5rem;
+    font-weight: 100;
+    top: -1.5rem;
+    padding-right: 0.5rem;
+}
+.cpc-company {
+    display:inline-block;
+    font-weight: bold;
+    padding-right: 0.25rem;
+}
