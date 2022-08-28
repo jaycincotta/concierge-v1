@@ -5,7 +5,7 @@ import Task from "../layout/Task"
 import useLocalStorage from "../cpc-shared/useLocalStorage"
 
 export default function RequestQuote() {
-    const { cart, addItem, clearCart} = useContext(AppContext)
+    const { addItem, clearCart} = useContext(AppContext)
     const [input, setInput] = useLocalStorage("quote-partId", "")
 
     function add() {
