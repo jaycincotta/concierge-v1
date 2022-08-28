@@ -1,8 +1,22 @@
 import React from "react"
 //import { Link } from "react-router-dom"
 import Task from "../layout/Task"
+import useLocalStorage from "../cpc-shared/useLocalStorage"
 
 export default function RequestQuote() {
+    const [input, setInput] = useLocalStorage("quote-partId", "")
+    const [cart, setCart] = useLocalStorage("quote-cart", [])
+    function addItem() {
+        const newPart = { part: { partId: input} }
+        const newCart = [...cart, newPart]
+        setCart(newCart)
+        setInput("")
+    }
+    function clearCart() {
+        setInput("")
+        setCart([])
+    }
+
     const videos = [
         "https://vimeo.com/741710210/c85fceae30"  // Jay Home 1
     ]
@@ -17,6 +31,9 @@ export default function RequestQuote() {
                     <button>Part Search: Find a part by part number</button>
                     <button>Research Request: Describe the part and we'll find the part number</button>
                 </div>
+                <input value={input} onChange={e => setInput(e.target.value)} />
+                <button onClick={addItem}>Add to Cart</button>
+                <button onClick={clearCart}>Clear Cart</button>
             </>
         },
         {

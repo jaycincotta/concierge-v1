@@ -1,9 +1,11 @@
 import { useState } from "react";
+import AppSettings from "../AppSettings";
 
-function useLocalStorage(key, initialValue) {
+export default function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {
-      const item = window.localStorage.getItem(key);
+      const fullKey = AppSettings.AppName + "." + key
+      const item = window.localStorage.getItem(fullKey);
       return item ? JSON.parse(item) : initialValue;
     } catch (e) {
       return initialValue;
@@ -13,14 +15,15 @@ function useLocalStorage(key, initialValue) {
   const setValue = value => {
     try {
       const valueToStore = value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      const denullified = value === null ? initialValue : valueToStore
+      setStoredValue(denullified);
+      const fullKey = AppSettings.AppName + "." + key
+      window.localStorage.setItem(fullKey, JSON.stringify(denullified));
     } catch (e) {
-      console.log(e);
+      console.log("ERROR in useLocalStorage.setVaue", e);
     }
   };
 
   return [storedValue, setValue];
 }
 
-export default useLocalStorage;

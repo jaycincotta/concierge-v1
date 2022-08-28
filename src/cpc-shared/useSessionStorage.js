@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function useSessionStorage(key, initialValue) {
+export default function useSessionStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = window.sessionStorage.getItem(key);
@@ -22,5 +22,3 @@ function useSessionStorage(key, initialValue) {
 
   return [storedValue, setValue];
 }
-
-export default useSessionStorage;

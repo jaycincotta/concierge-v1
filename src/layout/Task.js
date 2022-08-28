@@ -51,7 +51,6 @@ export default function Task({ title, steps, firstStep }) {
         }
     })()
 
-    console.log(title, index, step.name)
     return (
         <TaskStep
             title={title}
