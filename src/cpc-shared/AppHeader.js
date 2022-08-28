@@ -1,11 +1,10 @@
 import React, {useContext} from "react"
-import "./cpc-styles.css"
 import Burger from "./Burger"
 import { AppContext } from "../context/AppContext"
 
 export default function AppHeader({ appname, menu }) {
     const { cart } = useContext(AppContext)
-    
+
     return (
         <div className="cpc-mainnav">
             <div className="cpc-logo">

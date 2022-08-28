@@ -1,11 +1,47 @@
 :root {
-  --cpc-medium-blue: #0098dd;
-  --cpc-dark-blue: #1380b1;
+  --cpc-bright-blue: #0098dd;
+  --cpc-medium-blue: #1380b1;
+  --cpc-dark-blue: #055b83;
   --cpc-light-blue: #cee4f1;
   --cpc-mainnav-height: clamp(24px, 3.25rem, 10vw);
   --cpc-medium-orange: #f06721;
+  --cpc-dark-grey: #4a4a4a;
 }
 
+.pad {
+  padding: 1rem;
+}
+
+.cpc-section {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.cpc-content {
+  padding: 1rem;
+}
+.cpc-section.hello {
+  /* mix-blend-mode: multiply; */
+  background-image: linear-gradient(rgb(221, 236, 244), rgb(255, 255, 255));
+  background-color: var(--cpc-light-blue);
+  color: black;
+}
+.cpc-section.search {
+  background-color: var(--cpc-dark-grey);
+  color: white;
+}
+.cpc-section.custom {
+  background-color: white;
+  color: black;
+}
+.cpc-section.research {
+  background-color: var(--cpc-medium-blue);
+  color: white;
+}
+.cpc-section.footer {
+  background-color: var(--cpc-dark-blue);
+  color: white;
+}
 .cpc-mainnav {
   position: relative;
   height: var(--cpc-mainnav-height);
@@ -118,7 +154,7 @@
 .cpc-mainnav button {
   background-color: unset;
   float: right;
-  font-size: 175%;
+  font-size: 150%;
   margin: calc(var(--cpc-mainnav-height) * 0.15);
 }
 

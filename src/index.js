@@ -1,8 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './styles/reset.css';
+import './styles/cpc-shared.css';
+import './styles/concierge.css';
 
 const root = createRoot(document.getElementById('root'));
 console.log("Render root")

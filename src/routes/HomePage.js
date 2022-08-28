@@ -14,12 +14,14 @@ export default function HomePage() {
         {
             video: video,
             jsx: () => <>
+            <div className="cpc-section hello">
                 <h1>Main Menu</h1>
                 <div className="menu">
                     <Link to="/quote"><button>Get a Parts Quote</button></Link>
                     <Link to="/contact"><button>Contact Us</button></Link>
                     <Link to="/getting-started"><button>Getting Started Tutorial</button></Link>
                 </div>
+            </div>
             </>
         }
     ]

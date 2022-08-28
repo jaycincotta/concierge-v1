@@ -17,7 +17,8 @@ code {
 
 
 .player {
-  box-shadow: 0px 10px 20px -10px rgba(255,255,255,0.75);
+  /* box-shadow: 0px 10px 20px -10px rgba(255,255,255,0.75); */
+  border-bottom: 1px solid white;
 }
 .player-fluid {
   position: relative;
@@ -68,9 +69,6 @@ button:disabled {
   font-size: 1.25rem;
   font-variant: small-caps;
   display: inline;
-}
-.content {
-  padding: 1rem;
 }
 .thin {
   font-weight: 100;
