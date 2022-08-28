@@ -1,8 +1,11 @@
-import React from "react"
+import React, {useContext} from "react"
 import "./cpc-styles.css"
 import Burger from "./Burger"
+import { AppContext } from "../context/AppContext"
 
 export default function AppHeader({ appname, menu }) {
+    const { cart } = useContext(AppContext)
+    
     return (
         <div className="cpc-mainnav">
             <div className="cpc-logo">
@@ -14,6 +17,8 @@ export default function AppHeader({ appname, menu }) {
             </div>
             <img className="cpc-logo-back" src="/assets/logo-back.svg" alt="" />
             <Burger menu={menu} />
+
+            <button><div className={"overlay " + (cart.length > 0 ? "show" : "hide")}>{cart.length}</div><i className="fa-regular fa-cart-shopping"></i></button>
         </div>
     )
 }

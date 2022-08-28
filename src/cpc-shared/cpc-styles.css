@@ -1,108 +1,148 @@
 :root {
-    --cpc-medium-blue: #0098dd;
-    --cpc-dark-blue: #1380b1;
-    --cpc-light-blue: #cee4f1;
-    --cpc-mainnav-height: clamp(24px, 3.25rem, 10vw);
+  --cpc-medium-blue: #0098dd;
+  --cpc-dark-blue: #1380b1;
+  --cpc-light-blue: #cee4f1;
+  --cpc-mainnav-height: clamp(24px, 3.25rem, 10vw);
+  --cpc-medium-orange: #f06721;
 }
 
 .cpc-mainnav {
-    position: relative;
-    height: var(--cpc-mainnav-height);
-    width: 100%;
-    border-bottom: 1px solid white;
-    z-index: 1; /* Needed for menu to overlay page */
+  position: relative;
+  height: var(--cpc-mainnav-height);
+  width: 100%;
+  border-bottom: 1px solid white;
+  z-index: 1;
+  /* Needed for menu to overlay page */
 }
 
 .cpc-logo {
-    display: inline-block;
-    background-color: black;
-    height: 100%;
-    text-align: top;
+  display: inline-block;
+  background-color: black;
+  height: 100%;
+  text-align: top;
 }
 
 .cpc-logo-front {
-    display: inline;
-    height: calc(var(--cpc-mainnav-height) * 0.75);
-    padding: calc(var(--cpc-mainnav-height) * 0.125);
-    padding-right: 0;
+  display: inline;
+  height: calc(var(--cpc-mainnav-height) * 0.75);
+  padding: calc(var(--cpc-mainnav-height) * 0.125);
+  padding-right: 0;
 }
 
 .cpc-logo-back {
-    display: inline;
-    height: var(--cpc-mainnav-height);
-    position: relative;
-    left: -1px; /* fixes bug on iOS */
+  display: inline;
+  height: var(--cpc-mainnav-height);
+  position: relative;
+  left: -1px;
+  /* fixes bug on iOS */
 }
 
 .cpc-appname {
-    display: inline-block;
-    position: relative;
-    background-color: black;
-    font-size: calc(var(--cpc-mainnav-height) * 0.375);
-    font-weight: 100;
-    top: calc(var(--cpc-mainnav-height) * -0.375);
-    padding-right: 0.5rem;
+  display: inline-block;
+  position: relative;
+  background-color: black;
+  font-size: calc(var(--cpc-mainnav-height) * 0.375);
+  font-weight: 100;
+  top: calc(var(--cpc-mainnav-height) * -0.375);
+  padding-right: 0.5rem;
 }
 
 .cpc-company {
-    display: inline-block;
-    font-weight: bold;
-    padding-right: 0.25rem;
+  display: inline-block;
+  font-weight: bold;
+  padding-right: 0.25rem;
 }
 
 .cpc-burger {
-    margin-top: calc(var(--cpc-mainnav-height) * 0.2);
-    height: calc(var(--cpc-mainnav-height) * 0.625);
-    width: calc(var(--cpc-mainnav-height) * 0.625);
-    float: right;
-    padding: 0px;
-    margin-left: 0px;
-    margin-right: calc(var(--cpc-mainnav-height) * 0.2);
-    cursor: pointer;
+  margin-top: calc(var(--cpc-mainnav-height) * 0.2);
+  height: calc(var(--cpc-mainnav-height) * 0.625);
+  width: calc(var(--cpc-mainnav-height) * 0.625);
+  float: right;
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: calc(var(--cpc-mainnav-height) * 0.2);
+  cursor: pointer;
 }
 
 .cpc-mainmenu {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    text-align: right;
-    top: calc(var(--cpc-mainnav-height) - 1px); /* hides thin line on iOS */
-    right: 0;
-    opacity: 1;
-    min-width: 10rem;
-    max-width: 50%;
-    background-color: var(--cpc-dark-blue);
-    color: white;
-    border-radius: 0 0 0 1rem;
-    max-height: 1000px;
-    font-size: 1.25rem;
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
-    /* transition: 0.5s ease-in-out; */
-  }
-  .cpc-mainmenu.hide {
-    transform: translateY(-200%);
-    -webkit-transform: translateY(-200%);
-    -moz-transform: translateY(-200%);
-    opacity: 0;
-  }
-  .cpc-mainmenu ul {
-    margin: 0;
-    padding: 0 .25rem .5rem 0.25rem;
-    list-style: none;
-    overflow: none;
-  }
-  .cpc-mainmenu li {
-    padding: 8px 12px;
-  }
-  .cpc-mainmenu .selectable:hover {
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .cpc-mainmenu a {
-    text-decoration: none;
-    color: unset !important;
-    background-color: unset !important;
-  }
-  
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  top: calc(var(--cpc-mainnav-height) - 1px);
+  /* hides thin line on iOS */
+  right: 0;
+  opacity: 1;
+  min-width: 10rem;
+  max-width: 50%;
+  background-color: var(--cpc-dark-blue);
+  color: white;
+  border-radius: 0 0 0 1rem;
+  max-height: 1000px;
+  font-size: 1.25rem;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  /* transition: 0.5s ease-in-out; */
+}
+
+.cpc-mainmenu.hide {
+  transform: translateY(-200%);
+  -webkit-transform: translateY(-200%);
+  -moz-transform: translateY(-200%);
+  opacity: 0;
+}
+
+.cpc-mainmenu ul {
+  margin: 0;
+  padding: 0 .25rem .5rem 0.25rem;
+  list-style: none;
+  overflow: none;
+}
+
+.cpc-mainmenu li {
+  padding: 8px 12px;
+}
+
+.cpc-mainmenu .selectable:hover {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cpc-mainmenu a {
+  text-decoration: none;
+  color: unset !important;
+  background-color: unset !important;
+}
+
+.cpc-mainnav button {
+  background-color: unset;
+  float: right;
+  font-size: 175%;
+  margin: calc(var(--cpc-mainnav-height) * 0.15);
+}
+
+.cpc-mainnav .overlay {
+  background-color: var(--cpc-medium-orange);
+  border-color: white;
+  margin: 0;
+  padding: 0;
+  color: white;
+  border-radius: 50%;
+  height: 1.25rem;
+  width: 1.25rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  float: right;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  left: -1.5rem;
+  top: -.25rem;
+  opacity: 0;
+}
+
+.cpc-mainnav .overlay.show {
+  opacity: 1;
+}

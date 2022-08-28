@@ -1,20 +1,21 @@
-import React from "react"
+import React, { useContext} from "react"
+import { AppContext } from "../context/AppContext"
 //import { Link } from "react-router-dom"
 import Task from "../layout/Task"
 import useLocalStorage from "../cpc-shared/useLocalStorage"
 
 export default function RequestQuote() {
+    const { cart, addItem, clearCart} = useContext(AppContext)
     const [input, setInput] = useLocalStorage("quote-partId", "")
-    const [cart, setCart] = useLocalStorage("quote-cart", [])
-    function addItem() {
-        const newPart = { part: { partId: input} }
-        const newCart = [...cart, newPart]
-        setCart(newCart)
+
+    function add() {
+        const item = { part: { partId: input} }
+        addItem(item)
         setInput("")
     }
-    function clearCart() {
+    function clear() {
         setInput("")
-        setCart([])
+        clearCart([])
     }
 
     const videos = [
@@ -32,8 +33,8 @@ export default function RequestQuote() {
                     <button>Research Request: Describe the part and we'll find the part number</button>
                 </div>
                 <input value={input} onChange={e => setInput(e.target.value)} />
-                <button onClick={addItem}>Add to Cart</button>
-                <button onClick={clearCart}>Clear Cart</button>
+                <button onClick={add}>Add to Cart</button>
+                <button onClick={clear}>Clear Cart</button>
             </>
         },
         {
