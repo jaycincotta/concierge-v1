@@ -18,7 +18,7 @@ export default function TaskStep({ title, videoUrl, clickPrevious, clickNext, ch
 
         <PlayerPlus videoUrl={videoUrl} clickPrevious={clickPrevious} clickNext={clickNext} />
 
-        <div>
+        <div className={!!title ? "pad" : ""}>
             {children}
         </div>
     </>

@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/reset.css';
+import './styles/base.css';
 import './styles/cpc-shared.css';
 import './styles/concierge.css';
 
