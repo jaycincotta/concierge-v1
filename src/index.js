@@ -8,7 +8,6 @@ import './styles/cpc-shared.css';
 import './styles/concierge.css';
 
 const root = createRoot(document.getElementById('root'));
-console.log("Render root")
 root.render(
   <React.StrictMode>
     <App />

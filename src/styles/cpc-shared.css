@@ -94,6 +94,7 @@
   height: 100%;
   text-align: top;
   font-family: system-ui, sans-serif;
+  cursor: pointer;
 }
 .cpc-logo * {
     box-sizing: unset;
@@ -196,8 +197,8 @@
 .cpc-mainnav button {
   background-color: unset;
   float: right;
-  font-size: 150%;
-  margin: calc(var(--mainnav-height) * 0.15);
+  font-size: 125%;
+  margin: 0;
 }
 
 .cpc-mainnav .overlay {
@@ -225,9 +226,41 @@
   opacity: 1;
 }
 
+.cpc-mainnav .button {
+  position: relative;
+  display: inline-block;
+  top: -.75rem;
+  left: 2rem;
+  cursor: pointer;
+}
 /****** BEGIN Unused Stuff
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 ******* END Unuser Stuff */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+.App {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  min-height: 100vh;
+}
+header {
+  flex: 0 1 auto;  
+}
+main {
+  flex: 1 1 auto;
+}
+footer {
+  flex: 0 1 auto; 
+  background-color: black;
+  color: white;
+  text-align: right;
+  font-size: 75%;
+  padding: .5rem;
+}

@@ -1,3 +1,12 @@
+# Case Parts Concierge Project Structure
+
+
+
+## Bugs
+react-player warning message: player.js:2 Allow attribute will take precedence over 'allowfullscreen'.
+https://github.com/vimeo/player.js#pre-existing-player
+
+###################################################################################################
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

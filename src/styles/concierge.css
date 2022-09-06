@@ -76,3 +76,13 @@ li {
   font-style: italic;
   color:#badbeb
 }
+.login {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+}
+input {
+  background-color: white;
+  color: black;
+  padding: 0.25rem;
+}

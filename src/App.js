@@ -7,14 +7,17 @@ import GettingStarted from './routes/GettingStarted';
 import RequestQuote from './routes/RequestQuote';
 import ContactUs from './routes/ContactUs';
 import Test from './routes/Test';
+import Login from './routes/Login';
+import Account from './routes/Account';
 
 export default function App() {
-    console.log("Render App")
     return (
         <AppState>
             <Router>
                 <Routes>
                     <Route path="/" element={<Layout />}>
+                        <Route path="login" element={<Login />} />
+                        <Route path="account" element={<Account />} />
                         <Route path="getting-started" element={<GettingStarted />} />
                         <Route path="quote" element={<RequestQuote />} />
                         <Route path="contact" element={<ContactUs />} />
