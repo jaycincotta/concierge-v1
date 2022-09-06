@@ -8,7 +8,7 @@ export default function GettingStarted() {
     const { user } = useContext(AppContext)
 
     return (
-        <Task task="Getting Started" firstStep="Hi">
+        <Task task="Getting Started" className="black-on-blue-gradient">
             <TaskStep step="1">
                 <h1>Welcome!</h1>
                 <p>
@@ -24,7 +24,7 @@ export default function GettingStarted() {
                 <p>You're getting the hang of using the player control buttons. This is important because
                     context-sensitive video help is always available in Case Parts Concierge</p>
             </TaskStep>
-            <TaskStep step="Hi">
+            <TaskStep step="3">
                 {user &&
                     <div>
                         <h1>Good to see you, {user.email}!</h1>

@@ -20,13 +20,13 @@ export default function useVideo(task) {
                 title: "Jay Tutorial 2"
             },
             {
-                step: "Hi",
+                step: "3",
                 url: "https://vimeo.com/741707007/4f8ad9f04e",
                 title: "Jay Tutorial 3 Authenticated",
                 priority: () => user ? 1 : -1
             },
             {
-                step: "Hi",
+                step: "3",
                 url: "https://vimeo.com/741707199/4a0bc9ed43",
                 title: "Jay Tutorial 3 Anonymous",
                 priority: () => user ? -1 : 1
@@ -66,6 +66,11 @@ export default function useVideo(task) {
                 step: "Warehouses",
                 url: "https://vimeo.com/741709927/50f90a416e",
                 title: "Jay Home 1"
+            },
+            {
+                step: "Warehouses",
+                url: "https://vimeo.com/746912098/cd3064b96b",
+                title: "Contact Variation 1"
             }
         ],
         "Login": [
@@ -91,14 +96,30 @@ export default function useVideo(task) {
         return null;
     }
 
-    const getPriority = (step) => step.priority ? step.priority : 0
+    const getPriority = (step) => step.priority ? step.priority() : 0
 
 
     return {
-        // Pick a URL from the videos matching the step
-        pick: (step) => getUrl(pick(taskVideos
-            .filter(video => step === video.step)
-            .sort((a,b) => getPriority(a) - getPriority(b)))),
+        // pick a video randomly among the top priority candidates 
+        pick: (step) => {
+            const videos = taskVideos
+                .filter(video => step === video.step)
+                .sort((a,b) => getPriority(b) - getPriority(a))
+
+            switch (videos.length) {
+                case 0:
+                    console.log("Could not find any video for", step, task)
+                    return ""
+                case 1:
+                    return getUrl(videos[0])
+                default:
+                    const topPriority = getPriority(videos[0])
+                    const candidates = videos
+                        .filter(video => getPriority(video) === topPriority)
+                    console.log("Candidates", topPriority, candidates, videos)
+                    return getUrl(pick(candidates))
+            }
+        },
 
         // Return the data for each video matching the step 
         get: (step) => taskVideos.filter(video => step === video.step),

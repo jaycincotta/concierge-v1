@@ -21,7 +21,7 @@ export default function RequestQuote() {
 
     return (
         <Task task="Request a Quote">
-            <TaskStep step="A" previous="C">
+            <TaskStep>
                 <h1>Request Quote</h1>
                 <p className="voiceover">Your quote can include as many parts as you need but let's go through them one at a time. If you know the part number, use Part Search. Otherwise, pick the research option.</p>
                 <div className="menu">
@@ -32,12 +32,12 @@ export default function RequestQuote() {
                 <button onClick={add}>Add to Cart</button>
                 <button onClick={clear}>Clear Cart</button>
             </TaskStep>
-            <TaskStep step="B">
+            <TaskStep>
                 <h1>Part Search</h1>
                 <p className="voiceover">Great, just enter the part number and click next.</p>
                 <input type="text" />
             </TaskStep>
-            <TaskStep step="C" next="A">
+            <TaskStep>
                 <h1>Confirm Part</h1>
                 <p className="voiceover">Is this the part you're looking for? If so, click next to continue. Otherwise, pick another option.</p>
                 <div className="menu">
