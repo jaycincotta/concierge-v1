@@ -3,10 +3,8 @@ import { Navigate, useNavigate } from "react-router-dom"
 import { AppContext } from "../context/AppContext"
 import Task from "../layout/Task"
 import TaskStep from "../layout/TaskStep"
-import useVideo from "../data/useVideo"
 
 export default function Login() {
-    const { pick } = useVideo("Login")
     const { user, login } = useContext(AppContext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
