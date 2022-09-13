@@ -2,7 +2,6 @@ import React from "react"
 // import { Link } from "react-router-dom"
 import Task from "../layout/Task"
 import TaskStep from "../layout/TaskStep"
-import ContactInfo from "../components/ContactInfo"
 
 export default function Welcome() {
 
