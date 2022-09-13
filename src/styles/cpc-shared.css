@@ -258,9 +258,20 @@ main {
 }
 footer {
   flex: 0 1 auto; 
+  flex-direction: row;
   background-color: black;
   color: white;
-  text-align: right;
-  font-size: 75%;
+  font-size: .75rem;
   padding: .5rem;
+}
+footer .locations {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 0.5rem;
+}
+footer .location .branch {
+  font-weight: bold;
+}
+footer .location .phone {
+  display: inline-block;
 }

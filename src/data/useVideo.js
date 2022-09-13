@@ -42,7 +42,12 @@ export default function useVideo(task) {
                 step: "1",
                 url: "https://vimeo.com/741710210/c85fceae30",
                 title: "Jay Home 1"
-            }
+            },
+            {
+                step: "1",
+                url: "https://vimeo.com/746919825/446f99893e",
+                title: "Home Page Variant 1"
+            },
         ],
         "Request a Quote": [
             {
