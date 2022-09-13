@@ -2,6 +2,7 @@ import * as React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import AppState from "./context/AppState";
 import Layout from './layout/Main'
+import Welcome from './routes/Welcome'
 import HomePage from './routes/HomePage'
 import GettingStarted from './routes/GettingStarted';
 import RequestQuote from './routes/RequestQuote';
@@ -21,6 +22,7 @@ export default function App() {
                         <Route path="getting-started" element={<GettingStarted />} />
                         <Route path="quote" element={<RequestQuote />} />
                         <Route path="contact" element={<ContactUs />} />
+                        <Route path="welcome" element={<Welcome />} />
                         <Route path="test" element={<Test />} />
                         <Route index element={<HomePage />} />
                         <Route path="*" element={<Navigate replace to="/" />} />

@@ -3,6 +3,7 @@
 /* Document level adjustments */
 html {
     font-size: 18px;
+    font-weight: 200;
     font-family: system-ui, "Segoe UI", "Roboto", Helvetica, sans-serif,
                  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     -webkit-font-smoothing: antialiased;
@@ -14,6 +15,9 @@ html {
   }
   @media (max-width: 400px) {
     html { font-size: 14px; }
+  }
+  b {
+    font-weight: 600;
   }
   
   /* Type will scale with document */

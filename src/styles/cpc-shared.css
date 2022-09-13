@@ -260,12 +260,14 @@ footer {
   flex: 0 1 auto; 
   flex-direction: row;
   background-color: black;
+  text-align: center;
   color: white;
   font-size: .75rem;
   padding: .5rem;
 }
 footer .locations {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: .5rem;
   margin-bottom: 0.5rem;
 }
