@@ -95,14 +95,13 @@ export default function useVideo(task) {
     }
 
 
-    const taskVideos = videoLibrary[task]
-    if (!taskVideos) {
+    const taskVideos = videoLibrary[task] ? videoLibrary[task] : []
+    if (taskVideos.length === 0) {
         console.log("Unknown task:", task)
-        return null;
     }
+    console.log("useVideo", task, taskVideos)
 
     const getPriority = (step) => step.priority ? step.priority() : 0
-
 
     return {
         // pick a video randomly among the top priority candidates 

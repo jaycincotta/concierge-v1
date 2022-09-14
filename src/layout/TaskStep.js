@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import PlayerPlus from "../components/PlayerPlus"
 
 // This represents a single step of a task without making assumptions about the other steps
-export default function TaskStep({ taskName, videoUrl, clickPrevious, clickNext, children }) {
+export default function TaskStep({ taskName, hideCancel, videoUrl, clickPrevious, clickNext, children }) {
     return (<>
         <div className="playerPlus">
-            {taskName &&
+            {(taskName && !hideCancel) &&
                 <div className="subnav">
                     <Link to={-1}>
                         <button><i className="fa-solid fa-arrow-left-long" /></button>

@@ -286,3 +286,27 @@ footer .location .branch {
 footer .location .phone {
   display: inline-block;
 }
+.contactMethods {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .5rem;
+  margin: 1rem 0;
+}
+.contactMethods button {
+  width: 25vw;
+  text-align: center;
+}
+
+.branch .subtitle {
+  font-weight: 100;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-variant: small-caps;
+}
+.branch h1 {
+  margin-bottom: 1rem;
+}
+.branch .phoneNumbers {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}

@@ -39,10 +39,6 @@ html {
     cursor: pointer;
   }
   
-  a:hover {
-    color: black;
-    background-color: var(--highlight-orange);
-  }
   a:focus,
   a:visited,
   a:link,

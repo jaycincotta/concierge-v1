@@ -25,7 +25,7 @@ function findIndex(step, steps) {
     }
 }
 
-export default function Task({ task, firstStep, className, children }) {
+export default function Task({ task, hideCancel, firstStep, className, children }) {
     const steps = Children.toArray(children);
     const validateIndex = (i) => i >= 0 && i <= steps.length - 1 ? () => setIndex(i) : null
     const [index, setIndex] = useState(firstStep ? findIndex(firstStep, steps) : 0)
@@ -67,6 +67,7 @@ export default function Task({ task, firstStep, className, children }) {
                 Children.map(steps, (child, i) => index === i
                     ? cloneElement(child, {
                         taskName: task,
+                        hideCancel: hideCancel,
                         videoUrl: videoUrl,
                         clickNext: nextIndex,
                         clickPrevious: previousIndex,
