@@ -48,7 +48,16 @@
 .pad {
   padding: 1rem;
 }
-
+.center {
+  margin: auto;
+  text-align: center;
+}
+.subtitle {
+  font-size: 125%;
+  font-style: italic;
+  font-weight: 100;
+  margin-bottom: 1rem;;
+}
 .section {
   padding: 1rem;
 }

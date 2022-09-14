@@ -21,11 +21,11 @@ export default function TaskStep({ taskName, videoUrl, clickPrevious, clickNext,
         <div className={!!taskName ? "pad" : ""}>
             {children}
         </div>
-        <div>
+        {/* <div>
             <button disabled={!clickPrevious}  onClick={clickPrevious}>Previous</button>
             <Link to="-1"><button>Cancel</button></Link>
             <button disabled={!clickNext} onClick={clickNext}>Next</button>
-        </div>
+        </div> */}
     </>
     )
 }
