@@ -43,7 +43,7 @@ export default function HomePage() {
                         <h2>Parts Research</h2>
                         <p>Not sure what part you need? Let us help!</p>
                         <label>Part Description:</label>
-                        <textarea placeholder="Describe the part to be replaced" />
+                        <textarea placeholder="Describe the part to be replaced" rows={4}/>
                         <div className="assemblyNote">Describe the unit/assembly containing the part</div>
                         <label>Make:</label>
                         <input placeholder="Manufacturer of the unit/assembly"></input>

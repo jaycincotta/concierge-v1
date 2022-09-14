@@ -137,6 +137,8 @@ input {
   color: black;
   padding: .25rem;
   font-weight: bold;
+  resize: vertical;
+  min-height: 2rem;
 }
 ::placeholder {
   font-style: italic;
