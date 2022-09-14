@@ -126,7 +126,8 @@ input {
   grid-template-columns: auto;
 }
 .researchForm label {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: .9rem;
   font-weight: 400;
 }
 .researchForm input {
@@ -154,5 +155,10 @@ input {
   background-color: var(--medium-orange);
 }
 .assemblyNote {
+  margin: auto auto;
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: 400;;
   margin-top: 1rem;
+
 }

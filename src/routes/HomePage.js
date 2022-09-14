@@ -44,7 +44,7 @@ export default function HomePage() {
                         <p>Not sure what part you need? Let us help!</p>
                         <label>Part Description:</label>
                         <textarea placeholder="Describe the part to be replaced" rows={4}/>
-                        <div className="assemblyNote">Describe the unit/assembly containing the part</div>
+                        <div className="assemblyNote">What unit/assembly contains this part?</div>
                         <label>Make:</label>
                         <input placeholder="Manufacturer of the unit/assembly"></input>
                         <label>Model:</label>
