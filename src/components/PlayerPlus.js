@@ -29,11 +29,11 @@ export default function PlayerPlus({ videoUrl, clickPrevious, clickNext }) {
                 <i className="fa-solid fa-backward-step"></i>
             </button>
 
-            <button onClick={clickReplay}>
+            <button disabled={!videoUrl} onClick={clickReplay}>
                 <i className="fa-solid fa-arrow-rotate-left" />
             </button>
 
-            <button onClick={clickPlayResume}>
+            <button disabled={!videoUrl} onClick={clickPlayResume}>
                 <i className={"fa-solid fa-play" + (play ? "-pause" : "")} />
             </button>
             

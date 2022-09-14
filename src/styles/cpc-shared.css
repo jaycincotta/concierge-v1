@@ -48,7 +48,13 @@
   color: white;
   background-color: var(--dark-blue);
 }
-
+.white-on-blue button, .black-on-blue-gradient button {
+  background-color: var(--medium-orange);
+  color: white;
+}
+.white-on-blue a, .black-on-blue-gradient a {
+  color: var(--bright-blue);
+}
 .pad {
   padding: 1rem;
 }

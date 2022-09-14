@@ -6,7 +6,7 @@ import TaskStep from "../../layout/TaskStep"
 export default function MPK() {
 
     return (
-        <Task task="Los Angeles" hideCancel={true} className="white-on-blue">
+        <Task task="Los Angeles" hideCancel={true} className="black-on-blue-gradient">
             <TaskStep step="mpk" next="stl" previous="sea">
                 <div className="branch">
                     <div><span className="subtitle">Case Parts</span></div>
