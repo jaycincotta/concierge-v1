@@ -1,11 +1,17 @@
 import React from "react"
-// import { Link } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import Task from "../layout/Task"
 import TaskStep from "../layout/TaskStep"
 import ContactInfo from "../components/ContactInfo"
+import useLocalStorage from "../cpc-shared/useLocalStorage"
 
 export default function HomePage() {
+    const [seenWelcome] = useLocalStorage("seenWelcome", false)
 
+    if (!seenWelcome) {
+        return <Navigate to="/welcome" />
+    }
+       
     return (
         <Task task="">
             <TaskStep step="1">
