@@ -40,7 +40,7 @@ export default function MPK() {
                             customerservice@caseparts.com
                         </a>
                     </b></p>
-                    <p className="center">
+                    <p className="center pad">
                         <b><a href="mailto:accounting@caseparts.com" alt="">
                             accounting@caseparts.com
                         </a></b>
