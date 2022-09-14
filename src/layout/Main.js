@@ -15,7 +15,7 @@ export default function Layout() {
     )
     return (
         <div className="App">
-            <AppHeader appname="Concierge" menu={menu} />
+            <AppHeader appname="Company" menu={menu} />
             <Outlet />
             <AppFooter />
         </div>

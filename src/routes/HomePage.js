@@ -1,9 +1,12 @@
 import React from "react"
-import { Navigate } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import Task from "../layout/Task"
 import TaskStep from "../layout/TaskStep"
-import ContactInfo from "../components/ContactInfo"
 import useLocalStorage from "../cpc-shared/useLocalStorage"
+import CustomItems from "../components/CustomItems"
+
+
+const LearnMore = url => <Link className="learnMore" to={url}>Learn More</Link>
 
 export default function HomePage() {
     const [seenWelcome] = useLocalStorage("seenWelcome", false)
@@ -11,32 +14,44 @@ export default function HomePage() {
     if (!seenWelcome) {
         return <Navigate to="/welcome" />
     }
-       
+
+
     return (
         <Task task="">
             <TaskStep step="1">
                 <>
                     <div className="section black-on-blue-gradient">
-                        <h1>The Refrigeration Parts Experts</h1>
+                        <h1>Case Parts Company</h1>
+                        <div className="subtitle">The Commercial Refrigeration Parts Experts</div>
                         <p>
-                            Case Parts has been providing commercial refrigeration parts for over 50 years.
-                            We have three locations nationwide to get you your parts faster and cheaper.
-                            And Customer Service Reps have an average of over 12 years experience helping customers.
-                            They know what questions to ask and where to go to solve your problems!
+                            You can search our catalog, configure custom parts, and/or describe parts below. Just let us know what you need and we'll send you an OrderLink&trade; <LearnMore url="/custom" />
                         </p>
                     </div>
-                    <div className="section white-on-dark-grey ">
-                        <h1>Part Search</h1>
-                        Enter Part Number: <input></input><button>Search</button>
-                    </div>
-                    <div className="section black-on-white">
-                        <h1>Custom-Made Parts</h1>
-                    </div>
                     <div className="section white-on-blue">
-                        <h1>Parts Research</h1>
+                        <div className="searchLabel">Search our extensive parts catalog:</div><input className="searchInput" placeholder="Enter part# or keywords"/>
+                        <button className="searchButton">Search</button>
                     </div>
-                    <div className="section white-on-dark-blue">
-                        <ContactInfo/>
+                    <div className="section">
+                        <h2>Configure a Custom-Made Part</h2>
+                        <p>
+                            We are very experienced with fabricating commercial refrigeration parts
+                            to your exact needs. <LearnMore url="/custom" />
+                        </p>
+                        <CustomItems />
+                    </div>
+                    <div className="researchForm section black-on-blue">
+                        <h2>Parts Research</h2>
+                        <p>Not sure what part you need? Let us help!</p>
+                        <label>Part Description:</label>
+                        <textarea placeholder="Describe the part to be replaced" />
+                        <div className="assemblyNote">Describe the unit/assembly containing the part</div>
+                        <label>Make:</label>
+                        <input placeholder="Manufacturer of the unit/assembly"></input>
+                        <label>Model:</label>
+                        <input placeholder="Model of the unit/assembly"></input>
+                        <label>Serial Number:</label>
+                        <input placeholder="Serial Number of the unit/assembly"></input>
+                        <button>Add to Quote</button>
                     </div>
                 </>
             </TaskStep>

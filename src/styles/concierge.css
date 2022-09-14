@@ -86,3 +86,71 @@ input {
   color: black;
   padding: 0.25rem;
 }
+.customItemMenu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+.customItemButton {
+  color: #fff;
+  font-size: .75rem;
+  text-align: center;
+  background-color: #1280b1;
+  color: white;
+  padding: 8px;
+  width: 20vw;
+}
+.searchLabel {
+  font-size: 1rem;
+  margin: -.25rem .5rem .25rem 0;
+}
+.searchInput {
+  width: calc(100% - 4rem);
+  font-weight: bold;
+}
+.searchButton {
+  font-size: .75rem;
+  margin-left: .5rem;
+  background-color: var(--medium-orange);
+}
+.learnMore {
+  color: var(--bright-blue);
+  font-style: italic;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+.researchForm {
+  display: grid;
+  grid-template-columns: auto;
+}
+.researchForm label {
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+.researchForm input {
+  font-weight: bold;
+}
+.researchForm textarea {
+  background-color: white;
+  color: black;
+  padding: .25rem;
+  font-weight: bold;
+}
+::placeholder {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 90%;
+  padding: .25rem;
+}
+.researchForm button {
+  margin: 1rem 0 0 20vw;
+  width: 50vw;
+  text-align: center;
+  font-size: .75rem;
+  background-color: var(--medium-orange);
+}
+.assemblyNote {
+  margin-top: 1rem;
+}

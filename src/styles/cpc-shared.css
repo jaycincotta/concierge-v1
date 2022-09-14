@@ -19,6 +19,10 @@
   background-image: linear-gradient(rgb(221, 236, 244), rgb(255, 255, 255));
 }
 
+.black-on-blue {
+  color: black;
+  background-color: var(--light-blue);
+}
 .white-on-dark-grey {
   color: white;
   background-color: var(--dark-grey);
