@@ -8,9 +8,8 @@ export default function Layout() {
         <ul>
             <li className="selectable"><Link to="/">Home</Link></li>
             <li className="selectable"><Link to="/welcome">Welcome</Link></li>
-            <li className="selectable"><Link to="/quote">Quote</Link></li>
             <li className="selectable"><Link to="/getting-started">Help</Link></li>
-            <li className="selectable"><Link to="/contact">Contact</Link></li>
+
         </ul>
     )
     return (
