@@ -28,8 +28,11 @@ export default function HomePage() {
                         </p>
                     </div>
                     <div className="section white-on-blue">
-                        <div className="searchLabel">Search our extensive parts catalog:</div><input className="searchInput" placeholder="Enter part# or keywords"/>
-                        <button className="searchButton">Search</button>
+                        <div className="searchLabel">Search our extensive parts catalog:</div>
+                        <div className="searchBox">
+                            <input className="searchInput" placeholder="Enter part# or keywords" />
+                            <button className="searchButton">Search</button>
+                        </div>
                     </div>
                     <div className="section">
                         <h2>Configure a Custom-Made Part</h2>
@@ -43,7 +46,7 @@ export default function HomePage() {
                         <h2>Parts Research</h2>
                         <p>Not sure what part you need? Let us help!</p>
                         <label>Part Description:</label>
-                        <textarea placeholder="Describe the part to be replaced" rows={4}/>
+                        <textarea placeholder="Describe the part to be replaced" rows={4} />
                         <div className="assemblyNote">What unit/assembly contains this part?</div>
                         <label>Make:</label>
                         <input placeholder="Manufacturer of the unit/assembly"></input>
