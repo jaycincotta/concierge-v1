@@ -49,6 +49,9 @@
   color: white;
   background-color: var(--dark-blue);
 }
+button, .button {
+  cursor: pointer;
+}
 .white-on-blue button, .black-on-blue button, .black-on-blue-gradient button {
   background-color: var(--medium-orange);
   color: white;
