@@ -10,6 +10,9 @@ import Account from './routes/Account'
 import MPK from './routes/branch/MPK'
 import STL from './routes/branch/STL'
 import SEA from './routes/branch/SEA'
+import Search from './routes/Search'
+import Part from './routes/Part'
+import Cart from './routes/Cart'
 
 export default function App() {
     return (
@@ -24,6 +27,9 @@ export default function App() {
                         <Route path="branch/mpk" element={<MPK />} />
                         <Route path="branch/stl" element={<STL />} />
                         <Route path="branch/sea" element={<SEA />} />
+                        <Route path="search/:query" element={<Search />} />
+                        <Route path="part/:partId" element={<Part />} />
+                        <Route path="cart" element={<Cart />} />
                         <Route index element={<HomePage />} />
                         <Route path="*" element={<Navigate replace to="/" />} />
                     </Route>

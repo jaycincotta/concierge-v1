@@ -19,7 +19,7 @@ export default function AppHeader({ appname, menu }) {
             <img className="cpc-logo-back" src="/assets/logo-back.svg" alt="" />
             <Burger menu={menu} />
 
-            <button>
+            <button onClick={()=>{ if (cart.length > 0) navigate("/cart")}}>
                 <div className={"overlay " + (cart.length > 0 ? "show" : "hide")}>{cart.length}</div>
                 <i className="fa-regular fa-cart-shopping"></i>
             </button>

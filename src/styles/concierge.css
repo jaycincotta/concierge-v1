@@ -174,3 +174,27 @@ input {
   margin-top: 1rem;
 
 }
+.searchResults .card {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: .5rem;
+  padding: .25rem;
+  font-weight: bold;
+}
+.searchResults .card {
+  background-color: white;
+  margin-bottom: .5rem;
+}
+.searchResults .card .details {
+  padding: 0 .5rem;
+  grid-column: 1 / span 3;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: .5rem;
+  font-weight: 100;
+  font-size: .75rem;
+}
+.part .price {
+  font-size: 2rem;
+  margin: 1rem 0;
+}

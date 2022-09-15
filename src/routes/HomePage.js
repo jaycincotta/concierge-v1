@@ -1,12 +1,54 @@
-import React from "react"
-import { Link, Navigate } from "react-router-dom"
+import React, { useState, useContext } from "react"
+import { AppContext } from "../context/AppContext"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import Task from "../layout/Task"
 import TaskStep from "../layout/TaskStep"
 import useLocalStorage from "../cpc-shared/useLocalStorage"
 import CustomItems from "../components/CustomItems"
 
-
 const LearnMore = url => <Link className="learnMore" to={url}>Learn More</Link>
+
+const ResearchForm = () => {
+    const { addItem } = useContext(AppContext)
+    const [descr, setDescr] = useState("")
+    const [mfg, setMfg] = useState("")
+    const [model, setModel] = useState("")
+    const [sn, setSn] = useState("")
+    const navigate = useNavigate()
+
+    function addRequest() {
+        addItem({
+            itemType: "spo",
+            partId: "Part Research",
+            description: descr,
+            details: {
+                Make: mfg,
+                Model: model,
+                "S/N": sn
+            }
+        })
+        navigate("/cart")
+    }
+
+    return <div className="researchForm section black-on-blue">
+        <h2>Part Research</h2>
+        <p>Not sure what part you need? Let us help!</p>
+        <label>Part Description:</label>
+        <textarea placeholder="Describe the part to be replaced" rows={4}
+            onChange={e => setDescr(e.target.value)} />
+        <div className="assemblyNote">What unit/assembly contains this part?</div>
+        <label>Make:</label>
+        <input placeholder="Manufacturer of the unit/assembly"
+            onChange={e => setMfg(e.target.value)} />
+        <label>Model:</label>
+        <input placeholder="Model of the unit/assembly"
+            onChange={e => setModel(e.target.value)} />
+        <label>Serial Number:</label>
+        <input placeholder="Serial Number of the unit/assembly"
+            onChange={e => setSn(e.target.value)} />
+        <button onClick={addRequest}>Add to Quote</button>
+    </div>
+}
 
 export default function HomePage() {
     const [seenWelcome] = useLocalStorage("seenWelcome", false)
@@ -14,7 +56,6 @@ export default function HomePage() {
     if (!seenWelcome) {
         return <Navigate to="/welcome" />
     }
-
 
     return (
         <Task task="">
@@ -31,7 +72,7 @@ export default function HomePage() {
                         <div className="searchLabel">Search our extensive parts catalog:</div>
                         <div className="searchBox">
                             <input className="searchInput" placeholder="Enter part# or keywords" />
-                            <button className="searchButton">Search</button>
+                            <Link to="/part/171"><button className="searchButton">Search</button></Link>
                         </div>
                     </div>
                     <div className="section">
@@ -42,20 +83,7 @@ export default function HomePage() {
                         </p>
                         <CustomItems />
                     </div>
-                    <div className="researchForm section black-on-blue">
-                        <h2>Parts Research</h2>
-                        <p>Not sure what part you need? Let us help!</p>
-                        <label>Part Description:</label>
-                        <textarea placeholder="Describe the part to be replaced" rows={4} />
-                        <div className="assemblyNote">What unit/assembly contains this part?</div>
-                        <label>Make:</label>
-                        <input placeholder="Manufacturer of the unit/assembly"></input>
-                        <label>Model:</label>
-                        <input placeholder="Model of the unit/assembly"></input>
-                        <label>Serial Number:</label>
-                        <input placeholder="Serial Number of the unit/assembly"></input>
-                        <button>Add to Quote</button>
-                    </div>
+                    <ResearchForm />
                 </>
             </TaskStep>
         </Task>

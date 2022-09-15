@@ -7,6 +7,7 @@
 
   --dark-grey: #4a4a4a;
   --medium-grey: #72777d;
+  --light-grey: #e0e0e0;
 
   --medium-orange: #f06721;
 
@@ -48,7 +49,7 @@
   color: white;
   background-color: var(--dark-blue);
 }
-.white-on-blue button, .black-on-blue-gradient button {
+.white-on-blue button, .black-on-blue button, .black-on-blue-gradient button {
   background-color: var(--medium-orange);
   color: white;
 }
