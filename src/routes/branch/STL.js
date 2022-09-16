@@ -6,7 +6,7 @@ import TaskStep from "../../layout/TaskStep"
 export default function STL() {
 
     return (
-        <Task task="St Louis" hideCancel={true} className="black-on-blue-gradient">
+        <Task task="Locations" className="black-on-blue-gradient">
             <TaskStep step="stl" next="sea" previous="mpk">
                 <div className="branch">
                     <div><span className="subtitle">Case Parts</span></div>

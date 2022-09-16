@@ -15,6 +15,24 @@ export default function PlayerPlus({ videoUrl, clickPrevious, clickNext }) {
         setPlay(!play)
     }
 
+    const PlayerControls = () => <>
+        <button disabled={!clickPrevious} onClick={clickPrevious}>
+            <i className="fa-solid fa-backward-step"></i>
+        </button>
+
+        <button disabled={!videoUrl} onClick={clickReplay}>
+            <i className="fa-solid fa-arrow-rotate-left" />
+        </button>
+
+        <button disabled={!videoUrl} onClick={clickPlayResume}>
+            <i className={"fa-solid fa-play" + (play ? "-pause" : "")} />
+        </button>
+
+        <button disabled={!clickNext} onClick={clickNext}>
+            <i className="fa-solid fa-forward-step" />
+        </button>
+    </>
+
     return (
         <Player
             myRef={myRef}
@@ -25,21 +43,7 @@ export default function PlayerPlus({ videoUrl, clickPrevious, clickNext }) {
             endHandler={() => setPlay(false)}
             readyHandler={() => setReady(true)}
         >
-            <button disabled={!clickPrevious} onClick={clickPrevious}>
-                <i className="fa-solid fa-backward-step"></i>
-            </button>
-
-            <button disabled={!videoUrl} onClick={clickReplay}>
-                <i className="fa-solid fa-arrow-rotate-left" />
-            </button>
-
-            <button disabled={!videoUrl} onClick={clickPlayResume}>
-                <i className={"fa-solid fa-play" + (play ? "-pause" : "")} />
-            </button>
-            
-            <button disabled={!clickNext} onClick={clickNext}>
-                <i className="fa-solid fa-forward-step" />
-            </button>
+            {(clickPrevious || clickNext) && <PlayerControls />}
         </Player>
 
     )
