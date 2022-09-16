@@ -6,7 +6,7 @@ import TaskStep from "../layout/TaskStep"
 import useLocalStorage from "../cpc-shared/useLocalStorage"
 import CustomItems from "../components/CustomItems"
 
-const LearnMore = url => <Link className="learnMore" to={url}>Learn More</Link>
+const LearnMore = ({url}) => <Link className="learnMore" to={url}>Learn More</Link>
 
 export default function HomePage() {
     const [seenWelcome] = useLocalStorage("seenWelcome", false)
