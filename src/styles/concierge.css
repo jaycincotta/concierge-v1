@@ -86,8 +86,14 @@ li {
 }
 .login {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   gap: 1rem;
+}
+.login button {
+  grid-column: 2;
+  width: 100%;
+  text-align: center;
+  margin: auto;
 }
 input {
   background-color: white;
@@ -131,6 +137,7 @@ input {
   font-style: italic;
   font-weight: bold;
   font-variant: small-caps;
+  padding: 0 .5rem;
 }
 .researchForm {
   display: grid;
@@ -197,4 +204,25 @@ input {
 .part .price {
   font-size: 2rem;
   margin: 1rem 0;
+}
+.customParts {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 1rem;
+}
+.customItem {
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+  color: white;
+}
+.customItem p {
+  margin: auto auto;
+  max-width: 20rem;
+  text-align:justify;
+}
+.customItem img {
+  width: 20rem;
+  object-fit: cover;
 }

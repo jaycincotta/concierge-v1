@@ -13,7 +13,9 @@ import SEA from './routes/branch/SEA'
 import Search from './routes/Search'
 import Part from './routes/Part'
 import Cart from './routes/Cart'
-import Gasket from './routes/Gasket'
+import Gasket from './routes/custom/Gasket'
+import OrderLink from './routes/info/OrderLink'
+import CustomParts from './routes/custom/CustomParts'
 
 export default function App() {
     return (
@@ -31,7 +33,9 @@ export default function App() {
                         <Route path="search/:query" element={<Search />} />
                         <Route path="part/:partId" element={<Part />} />
                         <Route path="cart" element={<Cart />} />
+                        <Route path="custom" element={<CustomParts />} />
                         <Route path="custom/gasket" element={<Gasket />} />
+                        <Route path="info/orderlink" element={<OrderLink />} />
                         <Route index element={<HomePage />} />
                         <Route path="*" element={<Navigate replace to="/" />} />
                     </Route>

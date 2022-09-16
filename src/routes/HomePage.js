@@ -25,7 +25,8 @@ export default function HomePage() {
                         <h1>Case Parts Company</h1>
                         <div className="subtitle">The Commercial Refrigeration Parts Experts</div>
                         <p>
-                            You can search our catalog, configure custom parts, and/or describe parts below. Just let us know what you need and we'll send you an OrderLink&trade; <LearnMore url="/custom" />
+                            You can search our catalog, configure custom parts, and/or describe parts below. Just let us know what you need and we'll send you an OrderLink&trade; 
+                            <LearnMore url="/info/OrderLink" />
                         </p>
                     </div>
                     <div className="section white-on-blue">

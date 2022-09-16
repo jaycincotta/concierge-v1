@@ -21,18 +21,17 @@ export default function Login() {
         })
         navigate("/")
     }
-    return (<div className="white-on-blue">
-        <Task task="Login">
+    return (
+        <Task task="Login" className="white-on-blue">
             <TaskStep step="Login">
                 <div className="login">
-                    <label>Email</label>
+                    <label>Email:</label>
                     <input value={email} onChange={e => setEmail(e.target.value)} />
-                    <label>Password</label>
+                    <label>Password:</label>
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
                     <button onClick={clickHandler}>Login</button>
                 </div>
             </TaskStep>
         </Task>
-    </div>
     )
 }

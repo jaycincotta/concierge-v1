@@ -8,6 +8,13 @@ export default function useVideo(task) {
     const { user } = useContext(AppContext)
 
     const videoLibrary = {
+        "What's OrderLink?": [
+            {
+                step: "demo",
+                url: "https://www.youtube.com/watch?v=g66VyWr6WUY",
+                title: "OrderLink Demo",
+            },
+        ],
         "Getting Started": [
             {
                 step: "1",

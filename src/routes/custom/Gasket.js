@@ -1,7 +1,7 @@
 import React from "react"
-import GasketForm from "../components/GasketForm"
-import Task from "../layout/Task"
-import TaskStep from "../layout/TaskStep"
+import GasketForm from "../../components/GasketForm"
+import Task from "../../layout/Task"
+import TaskStep from "../../layout/TaskStep"
 
 export default function Gasket() {
 
