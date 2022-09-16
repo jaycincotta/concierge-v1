@@ -12,8 +12,8 @@ export default function Welcome() {
     }
     
     return (
-        <Task task="">
-            <TaskStep step="1">
+        <Task task="Home">
+            <TaskStep>
                 <>
                     <div className="section black-on-blue-gradient">
                         <h1>Welcome to Case Parts!</h1>

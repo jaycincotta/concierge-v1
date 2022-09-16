@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PlayerPlus from "../components/PlayerPlus"
 
 // This represents a single step of a task without making assumptions about the other steps
-export default function TaskStep({ taskName, hideCancel, videoUrl, clickPrevious, clickNext, children }) {
+export default function TaskStep({ taskName, step, hideCancel, videoUrl, clickPrevious, clickNext, children }) {
     return (<>
         <div className="playerPlus">
             {(taskName && !hideCancel) &&
@@ -16,7 +16,7 @@ export default function TaskStep({ taskName, hideCancel, videoUrl, clickPrevious
             }
         </div>
 
-        <PlayerPlus videoUrl={videoUrl} clickPrevious={clickPrevious} clickNext={clickNext} />
+        <PlayerPlus videoUrl={videoUrl} clickPrevious={clickPrevious} clickNext={clickNext} task={taskName} step={step} />
 
         <div className={!!taskName ? "pad" : ""}>
             {children}

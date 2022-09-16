@@ -1,7 +1,9 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+import { AppContext } from "../context/AppContext";
 import Player from "./Player"
 
-export default function PlayerPlus({ videoUrl, clickPrevious, clickNext }) {
+export default function PlayerPlus({ videoUrl, clickPrevious, clickNext, task, step }) {
+    const { incrementPlayCount } = useContext(AppContext)
     const [play, setPlay] = useState(false);
     const [ready, setReady] = useState(false)
     const myRef = React.createRef()
@@ -40,7 +42,7 @@ export default function PlayerPlus({ videoUrl, clickPrevious, clickNext }) {
             play={play && ready}
             playHandler={() => setPlay(true)}
             pauseHandler={() => setPlay(false)}
-            endHandler={() => setPlay(false)}
+            endHandler={() => {setPlay(false); incrementPlayCount(task, step)}}
             readyHandler={() => setReady(true)}
         >
             {(clickPrevious || clickNext) && <PlayerControls />}

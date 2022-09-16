@@ -18,8 +18,8 @@ export default function HomePage() {
     }
 
     return (
-        <Task task="">
-            <TaskStep step="1">
+        <Task task="Home" >
+            <TaskStep step="">
                 <>
                     <div className="section black-on-blue-gradient">
                         <h1>Case Parts Company</h1>

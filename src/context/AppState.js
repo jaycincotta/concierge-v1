@@ -5,6 +5,7 @@ import useLocalStorage from "../cpc-shared/useLocalStorage"
 export default function AppState({ children }) {
     const [cart, setCart] = useLocalStorage("cart", [])
     const [user, setUser] = useLocalStorage("user", null)
+    const [plays, setPlays] = useLocalStorage("plays", {})
 
     function addItem(item) {
         setCart([...cart, item])
@@ -27,6 +28,22 @@ export default function AppState({ children }) {
         setUser(null)
     }
 
+    const playDelimiter = " | "
+
+    function playCount(task, step) {
+        const key = task + playDelimiter + step
+        return plays[key] ? plays[key] : 0
+    }
+
+    function incrementPlayCount(task, step) {
+        const key = task + playDelimiter + step
+        const count = playCount(task, step) + 1
+        const clone = {...plays}
+        clone[key] = count
+        console.log("incrementPlayCount", task, step, count)
+        setPlays(clone)
+    }
+
     return (
         <AppContext.Provider
             value={{
@@ -37,7 +54,10 @@ export default function AppState({ children }) {
 
                 user,
                 login,
-                logout
+                logout,
+
+                playCount,
+                incrementPlayCount
             }}
         >
             {children}
