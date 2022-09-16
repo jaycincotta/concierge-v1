@@ -18,7 +18,7 @@ export default function TaskStep({ taskName, step, hideCancel, videoUrl, clickPr
 
         <PlayerPlus videoUrl={videoUrl} clickPrevious={clickPrevious} clickNext={clickNext} task={taskName} step={step} />
 
-        <div className={!!taskName ? "pad" : ""}>
+        <div className={(!!taskName && !hideCancel) ? "pad" : ""}>
             {children}
         </div>
         {/* <div>

@@ -23,13 +23,16 @@ export default function Login() {
     }
     return (
         <Task task="Login" className="white-on-blue">
-            <TaskStep step="Login">
+            <TaskStep>
                 <div className="login">
                     <label>Email:</label>
                     <input value={email} onChange={e => setEmail(e.target.value)} />
                     <label>Password:</label>
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
                     <button onClick={clickHandler}>Login</button>
+                    <a href={"https://my.caseparts.com/Account/Register/?returnURL=" + window.location.href}>
+                        Register
+                    </a>
                 </div>
             </TaskStep>
         </Task>

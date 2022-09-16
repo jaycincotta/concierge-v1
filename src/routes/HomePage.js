@@ -18,10 +18,10 @@ export default function HomePage() {
     }
 
     return (
-        <Task task="Home" >
-            <TaskStep step="">
+        <Task task="Home" hideCancel={true}>
+            <TaskStep>
                 <>
-                    <div className="section black-on-blue-gradient">
+                <div className="section black-on-blue-gradient ">
                         <h1>Case Parts Company</h1>
                         <div className="subtitle">The Commercial Refrigeration Parts Experts</div>
                         <p>

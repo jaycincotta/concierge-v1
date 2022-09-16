@@ -12,10 +12,10 @@ export default function Welcome() {
     }
     
     return (
-        <Task task="Home">
+        <Task task="Welcome" className="black-on-blue-gradient">
             <TaskStep>
                 <>
-                    <div className="section black-on-blue-gradient">
+                    <div className="section ">
                         <h1>Welcome to Case Parts!</h1>
                         <div className="subtitle">The Commercial Refrigeration Parts Experts</div>
                         <p>

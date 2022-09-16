@@ -231,3 +231,11 @@ input {
   padding: 0 .5rem .5rem 0;
   color: var(--bright-blue);
 }
+.branch {
+  max-width: 40rem;
+}
+.login a {
+  grid-column: 2;
+  color: white;
+  text-align: center;
+}

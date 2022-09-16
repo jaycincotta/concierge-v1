@@ -313,7 +313,7 @@ footer .location .phone {
   margin: 1rem 0;
 }
 .contactMethods button {
-  width: 25vw;
+  width: min(25vw, 10rem);
   text-align: center;
 }
 
@@ -328,5 +328,6 @@ footer .location .phone {
 }
 .branch .phoneNumbers {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto 1fr;
+  gap: 1rem;
 }

@@ -19,7 +19,7 @@ export default function Account() {
     return (
         <div className="white-on-blue">
             <Task task="Account">
-                <TaskStep step="Sign Out">
+                <TaskStep>
                     <div className="login">
                         <label>Email</label><span>{user.email}</span>
                         <label>Password</label><span>{user.custId}</span>

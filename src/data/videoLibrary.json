@@ -1,11 +1,4 @@
 {
-    "What's OrderLink?": [
-        {
-            "step": "demo",
-            "url": "https://www.youtube.com/watch?v=g66VyWr6WUY",
-            "title": "OrderLink Demo"
-        }
-    ],
     "Getting Started": [
         {
             "step": "1",
@@ -35,38 +28,54 @@
             "title": "Jay Tutorial 4"
         }
     ],
-    "Home": [
+
+    "Welcome": [
         {
-            "step": "",
-            "url": "https://vimeo.com/750530960/af861b60f5",
-            "title": "Authenticated 1",
-            "authenticated": true
+            "url": "https://vimeo.com/750549200/fc7018873b",
+            "authenticated": true,
+            "title": "Welcome 1 (Authenticated)"
         },
         {
-            "step": "",
-            "url": "https://vimeo.com/750531544/696640de2c",
-            "title": "Authenticated 2",
-            "authenticated": true
-        },
-        {
-            "step": "",
-            "url": "https://vimeo.com/750531708/64f7637eef",
-            "title": "Authenticated 3",
-            "authenticated": true
-        },
-        {
-            "step": "",
-            "url": "https://vimeo.com/750532371/86b4a3c935",
-            "title": "Anonymous 1",
-            "authenticated": false
-        },
-        {
-            "step": "",
-            "url": "https://vimeo.com/750532850/2e5505c38f",
-            "title": "Anonymous 2",
-            "authenticated": false
+            "url": "https://vimeo.com/750550994/e6c4b4c19b",
+            "authenticated": false,
+            "title": "Welcome 1 (Anonymous)"
         }
     ],
+    "Home": [
+        {
+            "url": "https://vimeo.com/750552007/db98c130e9",
+            "title": "Home 1"
+        },
+        {
+            "url": "https://vimeo.com/750552832/c43ca12749",
+            "title": "Home 2"
+        },
+        {
+            "url": "https://vimeo.com/750554243/5a9279e1d2",
+            "title": "Home 3"
+        }
+    ],
+    "Login": [
+        {
+            "url": "https://vimeo.com/750559104/9014a21c14",
+            "title": "Login"
+        }
+    ],
+    "Account": [
+        {
+            "url": "https://vimeo.com/750561620/4aed63af87",
+            "title": "Sign Out"
+        }
+    ],
+    "What's OrderLink?": [
+        {
+            "step": "demo",
+            "url": "https://www.youtube.com/watch?v=g66VyWr6WUY",
+            "title": "OrderLink Demo"
+        }
+    ],
+
+
     "Request a Quote": [
         {
             "step": "A",
@@ -94,20 +103,6 @@
             "step": "Warehouses",
             "url": "https://vimeo.com/746912098/cd3064b96b",
             "title": "Contact Variation 1"
-        }
-    ],
-    "Login": [
-        {
-            "step": "Login",
-            "url": "https://vimeo.com/741710210/c85fceae30",
-            "title": "Jay Home 1"
-        }
-    ],
-    "Account": [
-        {
-            "step": "Sign Out",
-            "url": "https://vimeo.com/741710210/c85fceae30",
-            "title": "Jay Home 1"
         }
     ]
 }
