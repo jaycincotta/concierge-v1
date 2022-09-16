@@ -24,7 +24,7 @@ export default function AppHeader({ appname, menu }) {
                 <i className="fa-regular fa-cart-shopping"></i>
             </button>
             {user && <button onClick={()=>navigate("/account")}><i className="fa-solid fa-user"></i></button>}
-            {!user && <div className="button" onClick={()=>navigate("/login")}>Login</div>}
+            {!user && <div className="loginButton" onClick={()=>navigate("/login")}>Login</div>}
         </header>
     )
 }

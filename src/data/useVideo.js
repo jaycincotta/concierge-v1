@@ -99,7 +99,6 @@ export default function useVideo(task) {
     if (taskVideos.length === 0) {
         console.log("Unknown task:", task)
     }
-    console.log("useVideo", task, taskVideos)
 
     const getPriority = (step) => step.priority ? step.priority() : 0
 
@@ -120,7 +119,6 @@ export default function useVideo(task) {
                     const topPriority = getPriority(videos[0])
                     const candidates = videos
                         .filter(video => getPriority(video) === topPriority)
-                    console.log("Candidates", topPriority, candidates, videos)
                     return getUrl(pick(candidates))
             }
         },

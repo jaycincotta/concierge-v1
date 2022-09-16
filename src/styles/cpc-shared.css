@@ -221,7 +221,13 @@ button, .button {
   background-color: unset;
   float: right;
   font-size: 125%;
-  margin: 0;
+  margin: .25rem -.5rem 0 0;
+}
+.cpc-mainnav .loginButton {
+  background-color: unset;
+  float: right;
+  font-size: 100%;
+  margin: .8rem .35rem 0 0;
 }
 
 .cpc-mainnav .overlay {
@@ -240,8 +246,8 @@ button, .button {
   cursor: pointer;
   z-index: 1;
   position: relative;
-  left: -1.5rem;
-  top: -.25rem;
+  left: -1.25rem;
+  top: -.20rem;
   opacity: 0;
 }
 

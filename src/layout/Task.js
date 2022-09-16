@@ -35,7 +35,6 @@ export default function Task({ task, hideCancel, firstStep, className, children 
 
     // Determine the the index of the next step based on the current step
     const nextIndex = (function () {
-        console.log("next", index, step)
         switch (typeof step.next) {
             case 'undefined':
                 return validateIndex(index + 1)

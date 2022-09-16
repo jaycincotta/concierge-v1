@@ -8,7 +8,7 @@ function Details({ part }) {
     const details = part.details
     const keys = Object.keys(details)
     return <>
-        {keys.map(item => <><div>{item}:</div><div><b>{details[item]}</b></div></>)}
+        {keys.map(item => <><div key={item + "Label"}>{item}:</div><div key={item + "Value"}><b>{details[item]}</b></div></>)}
     </>
 }
 
