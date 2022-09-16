@@ -16,6 +16,8 @@ import Cart from './routes/Cart'
 import Gasket from './routes/custom/Gasket'
 import OrderLink from './routes/info/OrderLink'
 import CustomParts from './routes/custom/CustomParts'
+import Purchase from './routes/Purchase'
+import Quote from './routes/Quote'
 
 export default function App() {
     return (
@@ -36,6 +38,8 @@ export default function App() {
                         <Route path="custom" element={<CustomParts />} />
                         <Route path="custom/gasket" element={<Gasket />} />
                         <Route path="info/orderlink" element={<OrderLink />} />
+                        <Route path="purchase" element={<Purchase />} />
+                        <Route path="quote" element={<Quote />} />
                         <Route index element={<HomePage />} />
                         <Route path="*" element={<Navigate replace to="/" />} />
                     </Route>

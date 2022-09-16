@@ -14,7 +14,7 @@ function Details({ part }) {
 
 function Card({ part, removeItem }) {
     const [open, setOpen] = useState(false)
-    const icon = part.itemType === "spo"
+    const icon = part.itemType === "unpriced"
         ? <i className="fa-regular fa-magnifying-glass-dollar" />
         : <i className="fa-solid fa-check" />
 
@@ -36,10 +36,10 @@ export default function Cart() {
     const cartType = (function () {
         if (cart.length === 0) return "empty"
 
-        const stockCount = cart.filter(item => item.itemType === "stock").length
-        const spoCount = cart.filter(item => item.itemType === "spo").length
-        if (stockCount > 0 && spoCount === 0) return "stock"
-        if (stockCount === 0 && spoCount > 0) return "spo"
+        const priced = cart.filter(item => item.price > 0).length
+        const unpriced = cart.length - priced
+        if (priced > 0 && unpriced === 0) return "priced"
+        if (priced === 0 && unpriced > 0) return "unpriced"
         return "mixed"
     })()
 
@@ -50,10 +50,10 @@ export default function Cart() {
             <TaskStep step={cartType}>
                 <h1><i className="fa-regular fa-cart-shopping" /> Shopping Cart</h1>
                 {cartType === "empty" && <p>Your cart is empty.</p>}
-                {cartType === "stock" && <p>
+                {cartType === "priced" && <p>
                     We carry everything you need! Click the Purchase button to continue checkout.
                 </p>}
-                {cartType === "spo" && <p>
+                {cartType === "unpriced" && <p>
                     We are happy to looking into this for you. Click the Submit Request button and
                     we will get back to you with a quote.
                 </p>}
@@ -66,9 +66,9 @@ export default function Cart() {
                 </div>
                 <div className="center pad">
                     {cartType === "empty" && <Link to="/"><button>Continue</button></Link>}
-                    {cartType === "stock" && <Link to="/Checkout"><button>Purchase</button></Link>}
-                    {cartType === "spo" && <Link to="/Request"><button>Submit Quote</button></Link>}
-                    {cartType === "mixed" && <Link to="/Request"><button>Submit Quote</button></Link>}
+                    {cartType === "priced" && <Link to="/Purchase"><button>Purchase</button></Link>}
+                    {cartType === "unpriced" && <Link to="/Quote"><button>Submit Quote</button></Link>}
+                    {cartType === "mixed" && <Link to="/Quote"><button>Submit Quote</button></Link>}
                 </div>
             </TaskStep>
         </Task>

@@ -27,7 +27,7 @@ function Card({ part }) {
 
 export default function Search({ query }) {
     const results = searchResults()
-    console.log(results)
+
     return (
         <Task task="Search" className="black-on-blue">
             <TaskStep step="1">

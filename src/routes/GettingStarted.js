@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import { AppContext } from "../context/AppContext"
 import Task from "../layout/Task"
 import TaskStep from "../layout/TaskStep"
-import ContactInfo from "../components/ContactInfo"
 
 export default function GettingStarted() {
     const { user } = useContext(AppContext)
@@ -47,7 +46,7 @@ export default function GettingStarted() {
                 }
             </TaskStep>
             <TaskStep step="4">
-                <ContactInfo />
+                <p>TBD</p>
             </TaskStep>
         </Task>
     )
