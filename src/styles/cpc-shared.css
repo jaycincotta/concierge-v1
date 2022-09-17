@@ -228,6 +228,7 @@ button, .button {
   float: right;
   font-size: 100%;
   margin: .8rem .35rem 0 0;
+  cursor: pointer;
 }
 
 .cpc-mainnav .overlay {

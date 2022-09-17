@@ -6,6 +6,7 @@ export default function AppState({ children }) {
     const [cart, setCart] = useLocalStorage("cart", [])
     const [user, setUser] = useLocalStorage("user", null)
     const [plays, setPlays] = useLocalStorage("plays", {})
+    const [showVideo, setShowVideo] = useLocalStorage("showVideo", true)
 
     function addItem(item) {
         setCart([...cart, item])
@@ -57,7 +58,10 @@ export default function AppState({ children }) {
                 logout,
 
                 playCount,
-                incrementPlayCount
+                incrementPlayCount,
+
+                showVideo,
+                setShowVideo
             }}
         >
             {children}

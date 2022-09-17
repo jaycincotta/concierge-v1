@@ -12,21 +12,20 @@ export default function Account() {
         return <Navigate to="/Login" />
     }
 
-    const clickHandler = () => {
+    const signOut = () => {
         logout()
         navigate("/")
     }
+
     return (
-        <div className="white-on-blue">
-            <Task task="Account">
-                <TaskStep>
-                    <div className="login">
-                        <label>Email</label><span>{user.email}</span>
-                        <label>Password</label><span>{user.custId}</span>
-                        <button onClick={clickHandler}>Sign Out</button>
-                    </div>
-                </TaskStep>
-            </Task>
-        </div>
+        <Task task="Account" className="white-on-blue">
+            <TaskStep>
+                <div className="login">
+                    <label>Email</label><span>{user.email}</span>
+                    <label>Password</label><span>{user.custId}</span>
+                    <button onClick={signOut}>Sign Out</button>
+                </div>
+            </TaskStep>
+        </Task>
     )
 }

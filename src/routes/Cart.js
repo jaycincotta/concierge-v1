@@ -43,8 +43,6 @@ export default function Cart() {
         return "mixed"
     })()
 
-    console.log("CART", cart, cartType)
-
     return (
         <Task task="Shopping Cart" className="black-on-blue">
             <TaskStep step={cartType}>
