@@ -6,8 +6,8 @@ import TaskStep from "../../layout/TaskStep"
 export default function Gasket() {
 
     return (
-        <Task task="Gasket" className="white-on-blue">
-            <TaskStep step="1">
+        <Task task="Custom-Molded Gasket" className="white-on-blue">
+            <TaskStep>
                 <h1>Custom Molded Gasket</h1>
                 <GasketForm />
             </TaskStep>

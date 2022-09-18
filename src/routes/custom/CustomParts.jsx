@@ -16,7 +16,7 @@ export default function CustomParts(props) {
 
   return (
     <Task task="Custom Parts" className="white-on-blue">
-      <TaskStep step="1" className="customParts">
+      <TaskStep className="customParts">
         <Item itemName="Gasket" title="Gaskets">
           <p>
             Magnetic and compression gaskets built to your specifications for walk-ins, drawers, and other applications.

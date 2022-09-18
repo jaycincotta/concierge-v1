@@ -28,7 +28,6 @@
             "title": "Jay Tutorial 4"
         }
     ],
-
     "Welcome": [
         {
             "url": "https://vimeo.com/750549200/fc7018873b",
@@ -71,38 +70,88 @@
         {
             "step": "demo",
             "url": "https://www.youtube.com/watch?v=g66VyWr6WUY",
-            "title": "OrderLink Demo"
+            "title": "OrderLink Demo (YouTube)"
         }
     ],
-
-
-    "Request a Quote": [
+    "Custom Parts": [
         {
-            "step": "A",
-            "url": "https://vimeo.com/741710210/c85fceae30",
-            "title": "Jay Home 1"
-        },
-        {
-            "step": "B",
-            "url": "https://vimeo.com/741710210/c85fceae30",
-            "title": "Jay Home 1"
-        },
-        {
-            "step": "C",
-            "url": "https://vimeo.com/741710210/c85fceae30",
-            "title": "Jay Home 1"
+            "url": "https://vimeo.com/750978624/5a9925046e",
+            "title": "Custom Parts (Copy)"
         }
     ],
-    "Contact Us": [
+    "Custom-Molded Gasket": [
         {
-            "step": "Warehouses",
-            "url": "https://vimeo.com/741709927/50f90a416e",
-            "title": "Jay Home 1"
+            "url": "https://vimeo.com/750986454/cca28e008d",
+            "title": "Gasket 1 (Copy)"
+        }
+    ],
+    "Search": [
+        {
+            "url": "https://vimeo.com/750973954/62f7f497fa",
+            "title": "Search"
+        }
+    ],
+    "Locations": [
+        {
+            "step": "mpk",
+            "url": "https://vimeo.com/750753323/ac04a1f21a",
+            "title": "MPK 1"
         },
         {
-            "step": "Warehouses",
-            "url": "https://vimeo.com/746912098/cd3064b96b",
-            "title": "Contact Variation 1"
+            "step": "stl",
+            "url": "https://vimeo.com/750756315/a1756e06b3",
+            "title": "STL 1"
+        },
+        {
+            "step": "sea",
+            "url": "https://vimeo.com/750757834/849124b352",
+            "title": "SEA 1"
+        }
+    ],   
+    "Shopping Cart": [
+        {
+            "step": "empty",
+            "url": "https://vimeo.com/750967975/1ca24b5379",
+            "title": "Cart Empty"
+        },
+        {
+            "step": "priced",
+            "url": "https://vimeo.com/750968852/1b3f7e561d",
+            "title": "Cart Checkout"
+        },
+        {
+            "step": "unpriced",
+            "url": "https://vimeo.com/750969861/120463d378",
+            "title": "Cart Unpriced"
+        },
+        {
+            "step": "mixed",
+            "url": "https://vimeo.com/750970981/b09b3891ef",
+            "title": ""
+        }
+    ],
+    "Quote": [
+        {
+            "step": "submit",
+            "url": "https://vimeo.com/751000898",
+            "title": "Quote"
+        },
+        {
+            "step": "thanks",
+            "url": "https://vimeo.com/751006868",
+            "title": "Thanks"
+        }
+    ],
+    "Purchase": [
+        {
+            "step": "submit",
+            "url": "https://vimeo.com/751000512",
+            "title": "Checkout"
+        },
+        {
+            "step": "thanks",
+            "url": "https://vimeo.com/751006868",
+            "title": "Welcome 1 (Anonymous)"
         }
     ]
 }

@@ -14,13 +14,13 @@ function Details({part}) {
 function Card({ part }) {
     const [open, setOpen] = useState(false)
     return <div className="card">
-        <Link to={"/part/" + part.partId}><div>{part.partId}: {part.description}</div></Link>
-        <div>${part.price}</div>
         <div className="button" onClick={() => setOpen(!open)}>
             {open
                 ? <i className="fa-regular fa-chevron-up" />
                 : <i className="fa-regular fa-chevron-down" />}
         </div>
+        <Link to={"/part/" + part.partId}><div>{part.partId}: {part.description}</div></Link>
+        <div>${part.price}</div>
         <div className="details">{open && <Details part={part}/>}</div>
     </div>
 }
@@ -30,7 +30,7 @@ export default function Search({ query }) {
 
     return (
         <Task task="Search" className="black-on-blue">
-            <TaskStep step="1">
+            <TaskStep>
                 <div className="searchResults">
                     {results.map((part, index) => <Card key={index} part={part} />)}
                 </div>

@@ -14,15 +14,15 @@ function Details({ part }) {
 
 function Card({ part, removeItem }) {
     const [open, setOpen] = useState(false)
-    const icon = part.itemType === "unpriced"
-        ? <i className="fa-regular fa-magnifying-glass-dollar" />
-        : <i className="fa-solid fa-check" />
+    const icon = part.price > 0
+        ? <i className="fa-regular fa-thumbs-up" />
+        : <i className="fa-regular fa-magnifying-glass-dollar" />
 
     return <div className="card">
         <div><span className="button" onClick={() => setOpen(!open)}>{open
             ? <i className="fa-regular fa-chevron-up" />
             : <i className="fa-regular fa-chevron-down" />}&nbsp;&nbsp;{icon}&nbsp;</span> {part.partId}: {part.description}</div>
-        <div>{part.price ? "$" + part.price : ""}</div>
+        <div className="price">{part.price ? "$" + part.price : ""}</div>
         <div className="button" onClick={(e) => { e.stopPropagation(); setOpen(false); removeItem(part) }}>
             <i className="fa-regular fa-xmark" />
         </div>
@@ -64,9 +64,10 @@ export default function Cart() {
                 </div>
                 <div className="center pad">
                     {cartType === "empty" && <Link to="/"><button>Continue</button></Link>}
-                    {cartType === "priced" && <Link to="/Purchase"><button>Purchase</button></Link>}
+                    {cartType === "priced" && <Link to="/Purchase"><button>Checkout</button></Link>}
                     {cartType === "unpriced" && <Link to="/Quote"><button>Submit Quote</button></Link>}
                     {cartType === "mixed" && <Link to="/Quote"><button>Submit Quote</button></Link>}
+                    <p><Link to="/">Continue Shopping</Link></p>
                 </div>
             </TaskStep>
         </Task>

@@ -183,7 +183,7 @@ input {
 }
 .searchResults .card {
   display: grid;
-  grid-template-columns: 1fr auto auto auto;
+  grid-template-columns: auto 1fr auto auto;
   gap: .5rem;
   padding: .25rem;
   font-weight: bold;
@@ -204,6 +204,9 @@ input {
 .part .price {
   font-size: 2rem;
   margin: 1rem 0;
+}
+.price {
+  text-align: right;
 }
 .customParts {
   display: flex;
