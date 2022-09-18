@@ -22,7 +22,7 @@ export default function Quote() {
     }
 
     return (
-        <Task task="Quote" className="black-on-blue-gradient">
+        <Task task="Quote" className="black-on-blue-gradient" hideCancel={step==="thanks"}>
             {step === "submit" && <TaskStep step="submit">
                 <h1>Request Quote</h1>
                 <p>Please enter below your contact information and (optionally) the shipping address for your order.</p>

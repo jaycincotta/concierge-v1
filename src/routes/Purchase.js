@@ -20,7 +20,7 @@ export default function Purchase() {
     }
     
     return (
-        <Task task="Purchase" className="black-on-blue-gradient">
+        <Task task="Purchase" className="black-on-blue-gradient" hideCancel={step==="thanks"}>
             {step === "submit" && <TaskStep step="submit">
                 <h1>Checkout</h1>
                 <p>Please enter below your contact information and the shipping address for your order.</p>
