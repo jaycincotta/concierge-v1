@@ -7,6 +7,8 @@ export default function AppState({ children }) {
     const [user, setUser] = useLocalStorage("user", null)
     const [plays, setPlays] = useLocalStorage("plays", {})
     const [showVideo, setShowVideo] = useLocalStorage("showVideo", true)
+    const [userLevel, setUserLevel] = useLocalStorage("userLevel", "")
+    const [branch, setBranch] = useLocalStorage("branch", "")
 
     function addItem(item) {
         setCart([...cart, item])
@@ -61,7 +63,13 @@ export default function AppState({ children }) {
                 incrementPlayCount,
 
                 showVideo,
-                setShowVideo
+                setShowVideo,
+
+                userLevel,
+                setUserLevel,
+
+                branch,
+                setBranch
             }}
         >
             {children}

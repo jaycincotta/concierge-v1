@@ -1,10 +1,12 @@
 import React, { useContext } from "react"
 import { AppContext } from "../context/AppContext"
+import { Link } from "react-router-dom"
 import Task from "../layout/Task"
 import TaskStep from "../layout/TaskStep"
+import RadioButton from "../components/RadioButton"
 
 export default function GettingStarted() {
-    const { user } = useContext(AppContext)
+    const { user, userLevel, setUserLevel, branch, setBranch } = useContext(AppContext)
 
     return (
         <Task task="Getting Started" className="black-on-blue-gradient">
@@ -33,20 +35,50 @@ export default function GettingStarted() {
                 {!user &&
                     <div>
                         <h1>Which best describes you?</h1>
-                        <ul>
-                            <li>I'm new to Case Parts</li>
-                            <li>I'm familiar with Case Parts but have never placed an order</li>
-                            <li>I've bought from Case Parts before, but I'm not registered on the website</li>
-                            <li>I have a CustomerID, but I'm not registered on the website</li>
-                            <li>I'm registered with caseparts.com, but don't have a CustomerID</li>
-                            <li>I have a CustomerID and am registered on caseparts.com</li>
-                            <li>I'd rather not answer this question</li>
-                        </ul>
+                        <div className="radioList">
+                            <RadioButton name="newbie" value={userLevel} setter={setUserLevel}
+                                label="I'm new to Case Parts" />
+                            <RadioButton name="newish" value={userLevel} setter={setUserLevel}
+                                label="I'm familiar with Case Parts but have never placed an order" />
+                            <RadioButton name="unreg" value={userLevel} setter={setUserLevel}
+                                label="I've bought from Case Parts before, but I'm not registered on the website" />
+                            <RadioButton name="nreg cust" value={userLevel} setter={setUserLevel}
+                                label="I have a CustomerID, but I'm not registered on the website" />
+                            <RadioButton name="reg" value={userLevel} setter={setUserLevel}
+                                label="I'm registered with caseparts.com, but don't have a CustomerID" />
+                            <RadioButton name="reg cust" value={userLevel} setter={setUserLevel}
+                                label="I have a CustomerID and am registered on caseparts.com" />
+                            <RadioButton name="anonymous" value={userLevel} setter={setUserLevel}
+                                label="I'd rather not answer this question" />
+                        </div>
                     </div>
                 }
             </TaskStep>
             <TaskStep step="4">
-                <p>TBD</p>
+                <h1>Which of our branches is closest to you?</h1>
+                <div className="radioList">
+                    <RadioButton name="MPK" value={branch} setter={setBranch}
+                        label={<p>
+                            <b>Case Parts Los Angeles</b><br />
+                            877 Monterey Park Rd, Monterey Park, CA 91754
+                        </p>}
+                    />
+                    <RadioButton name="STL" value={branch} setter={setBranch}
+                        label={<p>
+                            <b>Case Parts St Louis</b><br />
+                            3218 Rider Trail South, Earth City, MO 63045
+                        </p>}
+                    />
+                    <RadioButton name="SEA" value={branch} setter={setBranch}
+                        label={<p>
+                            <b>Case Parts Seattle</b><br />
+                            25315 74th Ave South, Suite 101, Kent, WA 98032
+                        </p>}
+                    />
+                </div>
+                <div className="pad center">
+                    <Link to="/"><button>Complete Tutorial</button></Link>
+                </div>
             </TaskStep>
         </Task>
     )
