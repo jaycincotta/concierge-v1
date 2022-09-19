@@ -15,6 +15,7 @@ export default function GasketForm() {
             itemType: "gasket",
             partId: "Gasket",
             description: `${sides}-Sided ${width} x ${height}`,
+            price: "49.99",
             details: {
                 Material: material,
                 Sides: sides,

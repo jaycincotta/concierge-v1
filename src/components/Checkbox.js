@@ -6,11 +6,11 @@ const checkbox = (checked) => checked
 
 export default function Checkbox({ label, checked, setChecked }) {
     return (
-        <>
-            <span className="checkbox" onClick={() => setChecked(!checked)}>
+        <div className="selectable" onClick={() => setChecked(!checked)}>
+            <span className="checkbox">
                 {checkbox(checked)}
             </span>
             <span>{label}</span>
-        </>
+        </div>
     )
 }

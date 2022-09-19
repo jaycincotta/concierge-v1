@@ -1,16 +1,24 @@
-import React from "react"
+import React, {useContext} from "react"
+import { AppContext } from "../../context/AppContext"
 import { Navigate } from "react-router-dom"
 import Task from "../../layout/Task"
 import TaskStep from "../../layout/TaskStep"
+import Checkbox from "../../components/Checkbox"
 
 export default function STL() {
+    const { branch, setBranch } = useContext(AppContext)
 
     return (
         <Task task="Locations" className="black-on-blue-gradient">
             <TaskStep step="stl" next="sea" previous="mpk">
                 <div className="branch">
                     <div><span className="subtitle">Case Parts</span></div>
-                    <h1>St Louis</h1>
+                    <h1>St Louis (STL)</h1>
+                    <Checkbox
+                        label="This is my preferred branch"
+                        checked={branch === "STL"}
+                        setChecked={flag => setBranch(flag ? "STL" : "")}
+                    />
                     <p>
                         3218 Rider Trail South<br />
                         Earth City, MO 63045

@@ -4,8 +4,27 @@ import { Outlet, Link, useNavigate } from "react-router-dom"
 import AppHeader from "../cpc-shared/AppHeader"
 import AppFooter from "../cpc-shared/AppFooter"
 
+function getPhone(branch) {
+    switch(branch) {
+        case "MPK": return "3237296000"
+        case "STL": return "3147399694"
+        case "SEA": return "2538544900"
+        default: return ""
+    }
+}
+
+const Contact = ({branch}) => {
+    const phone = getPhone(branch)
+    if (!phone) return ""
+
+    return <>
+        <a href={"tel:" + phone}><li><i className="fa-solid fa-phone" /> Call {branch}</li></a>
+        <a href={"sms:" + phone}><li><i className="fa-sharp fa-solid fa-message-sms" /> Text {branch}</li></a>
+    </>
+}
+
 export default function Layout() {
-    const { user, logout, showVideo, setShowVideo } = useContext(AppContext)
+    const { user, logout, showVideo, setShowVideo, branch } = useContext(AppContext)
     const navigate = useNavigate()
     const signOut = () => {
         logout()
@@ -17,6 +36,7 @@ export default function Layout() {
             <li className="selectable"><Link to="/">Home</Link></li>
             <li className="selectable"><Link to="/welcome">Welcome</Link></li>
             <li className="selectable"><Link to="/getting-started">Help</Link></li>
+            <Contact branch={branch} />
         </ul>
         <hr />
         <ul>

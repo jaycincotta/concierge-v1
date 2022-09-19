@@ -205,6 +205,9 @@ button, .button {
   padding: 8px 12px;
 }
 
+.selectable {
+  cursor: pointer;
+}
 .cpc-mainmenu .selectable:hover {
   color: white;
   font-weight: bold;

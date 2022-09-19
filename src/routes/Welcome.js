@@ -5,7 +5,7 @@ import TaskStep from "../layout/TaskStep"
 import useLocalStorage from "../cpc-shared/useLocalStorage"
 
 export default function Welcome() {
-    const [seenWelcome, setSeenWelcome] = useLocalStorage("seenWelcome", false)
+    const [seenWelcome, setSeenWelcome, user] = useLocalStorage("seenWelcome", false)
 
     if (!seenWelcome) {
         setSeenWelcome(true)
@@ -30,6 +30,10 @@ export default function Welcome() {
                         <p>
                             We appreciate you giving us a chance to serve you.
                         </p>
+                        {!user && <div className="annotation">
+                            <i className="fa-solid fa-lightbulb-exclamation-on"/>
+                            <p>If you already have a Case Parts account, <Link to="/Login">Login</Link> to ensure accurate pricing and access additional features.</p>
+                        </div>}
                         <h2>How can we help you today?</h2>
                         <div className="pad center">
                             <Link to="/"><button>Continue <i className="fa-solid fa-arrow-right" /></button></Link>

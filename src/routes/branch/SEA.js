@@ -1,16 +1,24 @@
-import React from "react"
+import React, {useContext} from "react"
+import { AppContext } from "../../context/AppContext"
 import { Navigate } from "react-router-dom"
 import Task from "../../layout/Task"
 import TaskStep from "../../layout/TaskStep"
+import Checkbox from "../../components/Checkbox"
 
 export default function SEA() {
+    const { branch, setBranch } = useContext(AppContext)
 
     return (
         <Task task="Locations" className="black-on-blue-gradient">
             <TaskStep step="sea" next="mpk" previous="stl">
             <div className="branch">
                     <div><span className="subtitle">Case Parts</span></div>
-                    <h1>Seattle</h1>
+                    <h1>Seattle (SEA)</h1>
+                    <Checkbox
+                        label="This is my preferred branch"
+                        checked={branch === "SEA"}
+                        setChecked={flag => setBranch(flag ? "SEA" : "")}
+                    />
                     <p>
                         25315 74th Ave South, Suite 101<br />
                         Kent, WA 98032

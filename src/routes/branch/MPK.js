@@ -1,16 +1,24 @@
-import React from "react"
+import React, {useContext} from "react"
+import { AppContext } from "../../context/AppContext"
 import { Navigate } from "react-router-dom"
 import Task from "../../layout/Task"
 import TaskStep from "../../layout/TaskStep"
+import Checkbox from "../../components/Checkbox"
 
 export default function MPK() {
+    const { branch, setBranch } = useContext(AppContext)
 
     return (
         <Task task="Locations" className="black-on-blue-gradient">
             <TaskStep step="mpk" next="stl" previous="sea">
                 <div className="branch">
                     <div><span className="subtitle">Case Parts</span></div>
-                    <h1>Los Angeles</h1>
+                    <h1>Los Angeles (MPK)</h1>
+                    <Checkbox
+                        label="This is my preferred branch"
+                        checked={branch === "MPK"}
+                        setChecked={flag => setBranch(flag ? "MPK" : "")}
+                    />
                     <p>
                         877 Monterey Pass Road<br />
                         Monterey Park, CA 91754
