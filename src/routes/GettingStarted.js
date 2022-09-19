@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useState, useContext } from "react"
 import { AppContext } from "../context/AppContext"
 import { Link } from "react-router-dom"
 import Task from "../layout/Task"
@@ -6,30 +6,50 @@ import TaskStep from "../layout/TaskStep"
 import RadioButton from "../components/RadioButton"
 
 export default function GettingStarted() {
-    const { user, userLevel, setUserLevel, branch, setBranch } = useContext(AppContext)
+    const { user, userLevel, setUserLevel, branch, setBranch, showVideo, setShowVideo } = useContext(AppContext)
+    const [step, setStep] = useState("step0")
+
+    // Ensure that video is visible for this.  Delay setShowVideo to avoid React warning
+    if (!showVideo) setTimeout(() => setShowVideo(true), 0)
 
     return (
-        <Task task="Getting Started" className="black-on-blue-gradient">
-            <TaskStep step="1">
+        <Task task="Getting Started" className="black-on-blue-gradient" step={step} setStep={setStep} >
+            <TaskStep step="step0">
                 <h1>Welcome!</h1>
                 <p>
                     This app is optimized for your phone to make it fast and easy to request quotes from Case Parts for commercial refrigeration parts.
                 </p>
                 <p>
-                    Click Play for step-by-step instructions on using this app.
+                    One unusual feature is the use of video on every page. The intention is to have context-sensitive help available to you at all times.  After you finish this tutoril, if you prefer, there is an option to Hide Video in the main menu.
+                </p>
+                <p>
+                    Please click the <i className="fa-solid fa-play" /> button on the video for step-by-step instructions on using this website.</p><p>Then click 
+                    the <i className="fa-solid fa-forward-step" /> button to continue the tutorial.
                 </p>
 
             </TaskStep>
-            <TaskStep step="2">
+            <TaskStep step="step1">
                 <h1>Good Job!</h1>
                 <p>You're getting the hang of using the player control buttons. This is important because
-                    context-sensitive video help is always available in Case Parts Concierge</p>
+                    context-sensitive video help is always available on this website.</p>
+                <p>
+                    You'll notice the the videos and the web content is synchronized and context-sensitive.
+                    You can continue this tutorial either by clicking 
+                    the <i className="fa-solid fa-forward-step" /> button on the video or the Continue 
+                    button below.
+                </p>
+                <div className="pad center">
+                    <button onClick={() => setStep("step2")}>Continue Tutorial</button>
+                </div>
             </TaskStep>
-            <TaskStep step="3">
+            <TaskStep step="step2">
                 {user &&
                     <div>
                         <h1>Good to see you, {user.email}!</h1>
                         <p>You're logged into your Case Parts account: {user.custId}</p>
+                        <div className="pad center">
+                            <button onClick={() => setStep("step3")}>Continue Tutorial</button>
+                        </div>
                     </div>
                 }
                 {!user &&
@@ -51,10 +71,13 @@ export default function GettingStarted() {
                             <RadioButton name="anonymous" value={userLevel} setter={setUserLevel}
                                 label="I'd rather not answer this question" />
                         </div>
+                        <div className="pad center">
+                            <button onClick={() => setStep("step3")}>Continue Tutorial</button>
+                        </div>
                     </div>
                 }
             </TaskStep>
-            <TaskStep step="4">
+            <TaskStep step="step3">
                 <h1>Which of our branches is closest to you?</h1>
                 <div className="radioList">
                     <RadioButton name="MPK" value={branch} setter={setBranch}

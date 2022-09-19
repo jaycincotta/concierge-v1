@@ -1,29 +1,29 @@
 {
     "Getting Started": [
         {
-            "step": "1",
+            "step": "step0",
             "url": "https://vimeo.com/741705223/5ca0983480",
             "title": "Jay Tutorial 1"
         },
         {
-            "step": "2",
+            "step": "step1",
             "url": "https://vimeo.com/741706003/e3d8e3e09e",
             "title": "Jay Tutorial 2"
         },
         {
-            "step": "3",
+            "step": "step2",
             "url": "https://vimeo.com/741707007/4f8ad9f04e",
             "title": "Jay Tutorial 3 Authenticated",
             "authenticated": true
         },
         {
-            "step": "3",
+            "step": "step2",
             "url": "https://vimeo.com/741707199/4a0bc9ed43",
             "title": "Jay Tutorial 3 Anonymous",
             "authenticated": false
         },
         {
-            "step": "4",
+            "step": "step3",
             "url": "https://vimeo.com/741709927/50f90a416e",
             "title": "Jay Tutorial 4"
         }

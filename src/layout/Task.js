@@ -25,36 +25,51 @@ function findIndex(step, steps) {
     }
 }
 
-export default function Task({ task, hideCancel, firstStep, className, children }) {
+export default function Task({ task, hideCancel, className, children, firstStep, step, setStep }) {
     const steps = Children.toArray(children);
-    const validateIndex = (i) => i >= 0 && i <= steps.length - 1 ? () => setIndex(i) : null
-    const [index, setIndex] = useState(firstStep ? findIndex(firstStep, steps) : 0)
-    const step = steps[index].props
+    const [_index, _setIndex] = useState(step ? findIndex(step, steps) : firstStep ? findIndex(firstStep, steps) : 0)
+    const index = step ? findIndex(step, steps) : _index;
+
+    const setIndex = newIndex => {
+        if (setStep) {
+            setTimeout(()=>setStep(steps[newIndex].props.step),100)
+        } else {
+            _setIndex(newIndex)
+        }
+    }
+    if (step && step !== steps[index].props.step) {
+        console.log("SYNC FROM", steps[index].props.step, "TO", step)
+        setIndex(findIndex(step, steps))
+    }
+    const currentStep = steps[index].props
     const { pick } = useVideo(task)
-    const videoUrl = pick(step.step)
+    const videoUrl = pick(currentStep.step)
+
+    const validateIndex = (i) => i >= 0 && i <= steps.length - 1 ? () => setIndex(i) : null
+
 
     // Determine the the index of the next step based on the current step
     const nextIndex = (function () {
-        switch (typeof step.next) {
+        switch (typeof currentStep.next) {
             case 'undefined':
                 return validateIndex(index + 1)
             case 'number':
-                return validateIndex(Math.trunc(step.next))
+                return validateIndex(Math.trunc(currentStep.next))
             case 'string':
-                return validateIndex(steps.findIndex((x) => x.props.step === step.next))
+                return validateIndex(steps.findIndex((x) => x.props.step === currentStep.next))
             default:
                 return null
         }
     })()
 
     const previousIndex = (function () {
-        switch (typeof step.previous) {
+        switch (typeof currentStep.previous) {
             case 'undefined':
                 return validateIndex(index - 1)
             case 'number':
-                return validateIndex(Math.trunc(step.previous))
+                return validateIndex(Math.trunc(currentStep.previous))
             case 'string':
-                return validateIndex(steps.findIndex((x) => x.props.step === step.previous))
+                return validateIndex(steps.findIndex((x) => x.props.step === currentStep.previous))
             default:
                 return null
         }
