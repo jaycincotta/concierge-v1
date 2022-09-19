@@ -18,11 +18,13 @@ import OrderLink from './routes/info/OrderLink'
 import CustomParts from './routes/custom/CustomParts'
 import Purchase from './routes/Purchase'
 import Quote from './routes/Quote'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
     return (
         <AppState>
             <Router>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route path="login" element={<Login />} />
@@ -43,7 +45,6 @@ export default function App() {
                         <Route index element={<HomePage />} />
                         <Route path="*" element={<Navigate replace to="/" />} />
                     </Route>
-
                 </Routes>
             </Router >
         </AppState>

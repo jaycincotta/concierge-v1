@@ -18,9 +18,9 @@ export default function Purchase() {
     if (step === "submit" && cart.length === 0) {
         return <Navigate to="/cart" />
     }
-    
+
     return (
-        <Task task="Purchase" className="black-on-blue-gradient" hideCancel={step==="thanks"}>
+        <Task task="Purchase" className="black-on-blue-gradient" hideCancel={step === "thanks"}>
             {step === "submit" && <TaskStep step="submit">
                 <h1>Checkout</h1>
                 <p>Please enter below your contact information and the shipping address for your order.</p>
@@ -33,11 +33,13 @@ export default function Purchase() {
             </TaskStep>
             }
             {step === "thanks" && <TaskStep step="thanks">
-                <h1>Thank you!</h1>
-                <p>Your order has been submitted and is being reviewed. You will be sent an{" "}
-                    <Link to="/info/orderlink">OrderLink&trade;</Link> to track your order and to provide payment information if you are purchasing by credit card.</p>
-                <div className="pad center">
-                    <Link to="/"><button>Continue</button></Link>
+                <div className="pad">
+                    <h1>Thank you!</h1>
+                    <p>Your order has been submitted and is being reviewed. You will be sent an{" "}
+                        <Link to="/info/orderlink">OrderLink&trade;</Link> to track your order and to provide payment information if you are purchasing by credit card.</p>
+                    <div className="pad center">
+                        <Link to="/"><button>Continue</button></Link>
+                    </div>
                 </div>
             </TaskStep>
             }
