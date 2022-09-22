@@ -9,8 +9,13 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
-  @media (max-width: 900px) {
+  html,
+  body {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 100ch;
+  }
+    @media (max-width: 900px) {
     html { font-size: 16px; }
   }
   @media (max-width: 400px) {
@@ -49,3 +54,12 @@ html {
   hr {
     border-top: 1px solid;
   }
+
+  button, .button {
+    cursor: pointer;
+  }
+  
+  button:disabled, .button:disabled {
+    cursor:default;
+  }
+  

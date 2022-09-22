@@ -114,7 +114,7 @@ input {
   background-color: #1280b1;
   color: white;
   padding: 8px;
-  width: 20vw;
+  width: min(20vw, 25ch);
 }
 .searchLabel {
   font-size: 1rem;

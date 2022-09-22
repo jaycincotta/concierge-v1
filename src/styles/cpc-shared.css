@@ -19,7 +19,6 @@
   background-color: var(--light-blue);
   background-image: linear-gradient(rgb(221, 236, 244), rgb(255, 255, 255));
 }
-
 .black-on-blue {
   color: black;
   background-color: var(--light-blue);
@@ -34,24 +33,19 @@
   margin: 0 .5rem 0 .5rem;
   padding: .25rem .5rem;
 }
-
 .black-on-white {
   color: black;
   background-color: white;
 }
-
 .white-on-blue {
   color: white;
   background-color: var(--medium-blue);
 }
-
 .white-on-dark-blue {
   color: white;
   background-color: var(--dark-blue);
 }
-button, .button {
-  cursor: pointer;
-}
+
 .white-on-blue button, .black-on-blue button, .black-on-blue-gradient button {
   background-color: var(--medium-orange);
   color: white;
@@ -272,11 +266,7 @@ code {
     monospace;
 }
 ******* END Unuser Stuff */
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
+
 .App {
   display: flex;
   flex-flow: column;
