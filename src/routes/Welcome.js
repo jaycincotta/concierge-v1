@@ -39,6 +39,7 @@ export default function Welcome() {
                             <Link to="/"><button>Continue <i className="fa-solid fa-arrow-right" /></button></Link>
                         </div>
                     </div>
+                    <img src="/images/catalogpage.png" alt=""/>
                 </>
             </TaskStep>
         </Task>
