@@ -1,3 +1,5 @@
+/* Beware for prod builds, use calc within clamp https://stackoverflow.com/a/69032185/26553 */
+
 :root {
   /* COLORS */
   --clr-dark-blue: #055b83;
@@ -10,7 +12,7 @@
   --clr-light-grey: #e0e0e0;
   --clr-medium-orange: #f06721;
 
-  --mainnav-height: clamp(32px, 3vw + 1rem, 5rem);
+  /* --mainnav-height: clamp(32px, 3vw + 1rem, 5rem); */
 }
 
 html,
@@ -218,7 +220,7 @@ p {
   display: inline-block;
   position: relative;
   background-color: black;
-  font-size: clamp(1em, var(--mainnav-height) * 0.5, 3em);
+  font-size: clamp(1em, calc(var(--mainnav-height) * 0.5), 3em);
   font-weight: 100;
   top: calc(var(--mainnav-height) * -0.3);
   padding-right: 0.5rem;
