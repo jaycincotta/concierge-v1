@@ -3,7 +3,7 @@
   padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
 }
 .player-controls {
-  background-color:var(--dark-blue);
+  background-color:var(--clr-dark-blue);
   padding: 0.15rem;
   display: flex;
   flex-direction: row;
@@ -20,7 +20,7 @@ button {
 
 .player-controls button {
   font-weight: bold;
-  background-color:var(--dark-blue);
+  background-color:var(--clr-dark-blue);
   color: white;
   cursor: pointer;
   padding: 0.25rem 0.5rem;
@@ -34,7 +34,7 @@ button {
 } */
 .player-controls button:disabled {
   /* background-color: #b4e6ff; */
-  color: var(--disabled-blue);
+  color: var(--clr-disabled-blue);
   cursor:default;
 }
 .react-player {
