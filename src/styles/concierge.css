@@ -108,7 +108,7 @@ input {
   margin: 1rem 0;
 }
 .customItemButton {
-  color: #fff;
+  color: white !important;
   font-size: .75rem;
   text-align: center;
   background-color: #1280b1;
@@ -218,7 +218,6 @@ input {
 .customItem {
   text-align: center;
   margin: 1rem 0 2rem 0;
-  color: white;
 }
 .customItem p {
   margin: auto auto;

@@ -9,21 +9,23 @@ export default function TaskStep({ taskName, step, hideCancel, videoUrl, clickPr
 
     return (<>
         {showVideo &&
-            <>
-                <div className="playerPlus">
-                    {(taskName && !hideCancel) &&
-                        <div className="subnav">
-                            <Link to={-1}>
-                                <button><i className="fa-solid fa-arrow-left-long" /></button>
-                            </Link>
-                            <h2>{taskName}</h2>
-                        </div>
-                    }
-                </div>
+            <div className="player-container">
+                <div className="video-width">
+                    <div className="playerPlus">
+                        {(taskName && !hideCancel) &&
+                            <div className="subnav">
+                                <Link to={-1}>
+                                    <button><i className="fa-solid fa-arrow-left-long" /></button>
+                                </Link>
+                                <h2>{taskName}</h2>
+                            </div>
+                        }
+                    </div>
 
-                <PlayerPlus videoUrl={videoUrl} clickPrevious={clickPrevious} clickNext={clickNext}
-                    task={taskName} step={step} />
-            </>}
+                    <PlayerPlus videoUrl={videoUrl} clickPrevious={clickPrevious} clickNext={clickNext}
+                        task={taskName} step={step} />
+                </div>
+            </div>}
         <div className={(!!taskName && !hideCancel) ? "pad" : ""}>
             {children}
         </div>

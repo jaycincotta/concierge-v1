@@ -21,11 +21,13 @@ const Location = ({ branch, phone, hours, url }) => (
 */
 export default function AppFooter() {
     return <footer>
+        <div className="page-width">
         <div className="locations">
             <Location branch="Los Angeles" phone="(800) 421-0271" hours="7:30am-5pm PT" url="/branch/mpk" />
             <Location branch="St Louis" phone="(800) 423-9337" hours="7am-4:30pm ET" url="/branch/stl" />
             <Location branch="Seattle" phone="(800) 715-3416" hours="7:30am-5pm PT" url="/branch/sea" />
         </div>
         <div>&copy;2022 Celsius Joint Venture</div>
+        </div>
     </footer>
 }

@@ -9,22 +9,25 @@ export default function AppHeader({ appname, menu }) {
 
     return (
         <header className="cpc-mainnav">
-            <div className="cpc-logo" onClick={() => navigate("/")}>
-                <img className="cpc-logo-front" src="/assets/logo-front.svg" alt="" />
-                <div className="cpc-appname">
-                    <div className="cpc-company">CaseParts</div>
-                    {appname}
+            <div className="black-padding" />
+            <div className="page-width">
+                <div className="cpc-logo" onClick={() => navigate("/")}>
+                    <img className="cpc-logo-front" src="/assets/logo-front.svg" alt="" />
+                    <div className="cpc-appname">
+                        <div className="cpc-company">CaseParts</div>
+                        {appname}
+                    </div>
                 </div>
+                <img className="cpc-logo-back" src="/assets/logo-back.svg" alt="" />
+                <Burger menu={menu} />
+                <button onClick={() => { if (cart.length > 0) navigate("/cart") }}>
+                    <div className={"overlay " + (cart.length > 0 ? "show" : "hide")}>{cart.length}</div>
+                    <i className="fa-regular fa-cart-shopping"></i>
+                </button>
+                {!showVideo && <button onClick={() => setShowVideo(true)}><i className="fa-brands fa-youtube" /> </button>}
+                {user && <button onClick={() => navigate("/account")}><i className="fa-solid fa-user" /></button>}
+                {!user && <div className="loginButton" onClick={() => navigate("/login")}>Login</div>}
             </div>
-            <img className="cpc-logo-back" src="/assets/logo-back.svg" alt="" />
-            <Burger menu={menu} />
-            <button onClick={() => { if (cart.length > 0) navigate("/cart") }}>
-                <div className={"overlay " + (cart.length > 0 ? "show" : "hide")}>{cart.length}</div>
-                <i className="fa-regular fa-cart-shopping"></i>
-            </button>
-            {!showVideo && <button onClick={() => setShowVideo(true)}><i className="fa-brands fa-youtube" /> </button>}
-            {user && <button onClick={() => navigate("/account")}><i className="fa-solid fa-user" /></button>}
-            {!user && <div className="loginButton" onClick={() => navigate("/login")}>Login</div>}
         </header>
     )
 }
