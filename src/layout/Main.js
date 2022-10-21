@@ -3,6 +3,7 @@ import { AppContext } from "../context/AppContext"
 import { Outlet, Link, useNavigate } from "react-router-dom"
 import AppHeader from "../cpc-shared/AppHeader"
 import AppFooter from "../cpc-shared/AppFooter"
+import { AuthContext } from "../context/AuthContext"
 
 function getPhone(branch) {
     switch(branch) {
@@ -24,7 +25,9 @@ const Contact = ({branch}) => {
 }
 
 export default function Layout() {
-    const { user, logout, showVideo, setShowVideo, branch } = useContext(AppContext)
+    const { logout, showVideo, setShowVideo, branch } = useContext(AppContext)
+    const { email } = useContext(AuthContext);
+
     const navigate = useNavigate()
     const signOut = () => {
         logout()
@@ -43,7 +46,7 @@ export default function Layout() {
             <li className="selectable" onClick={() => setShowVideo(!showVideo)}>
                 <i className="fa-brands fa-youtube" /> {showVideo ? "Hide" : "Show"} Video
             </li>
-            {user && <li className="selectable" onClick={signOut}>Sign Out</li>}
+            {email && <li className="selectable" onClick={signOut}>Sign Out</li>}
         </ul>
     </>)
     return (

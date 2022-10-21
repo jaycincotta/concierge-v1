@@ -1,12 +1,14 @@
 import { useContext } from "react"
 import { AppContext } from "../context/AppContext"
+import { AuthContext } from "../context/AuthContext"
 import videoLibrary from "./videoLibrary.json"
 
 
 const getUrl = (video) => video ? video.url : ""
 
 export default function useVideo(task) {
-    const { user, playCount } = useContext(AppContext)
+    const { playCount } = useContext(AppContext)
+    const { email } = useContext(AuthContext)
 
     const taskVideos = videoLibrary[task] ? videoLibrary[task] : []
 
@@ -21,8 +23,8 @@ export default function useVideo(task) {
     }
 
     const eligible = (video) => {
-        if (video.authenticated && !user) return false
-        if (video.authenticated === false && user) return false
+        if (video.authenticated && !email) return false
+        if (video.authenticated === false && email) return false
         return true
     }
 

@@ -4,7 +4,6 @@ import useLocalStorage from "../cpc-shared/useLocalStorage"
 
 export default function AppState({ children }) {
     const [cart, setCart] = useLocalStorage("cart", [])
-    const [user, setUser] = useLocalStorage("user", null)
     const [plays, setPlays] = useLocalStorage("plays", {})
     const [showVideo, setShowVideo] = useLocalStorage("showVideo", true)
     const [userLevel, setUserLevel] = useLocalStorage("userLevel", "")
@@ -21,14 +20,6 @@ export default function AppState({ children }) {
 
     function clearCart() {
         setCart([])
-    }
-
-    function login(user) {
-        setUser(user)
-    }
-
-    function logout() {
-        setUser(null)
     }
 
     const playDelimiter = " | "
@@ -54,10 +45,6 @@ export default function AppState({ children }) {
                 addItem,
                 removeItem,
                 clearCart,
-
-                user,
-                login,
-                logout,
 
                 playCount,
                 incrementPlayCount,

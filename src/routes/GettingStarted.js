@@ -4,9 +4,11 @@ import { Link } from "react-router-dom"
 import Task from "../layout/Task"
 import TaskStep from "../layout/TaskStep"
 import RadioButton from "../components/RadioButton"
+import { AuthContext } from "../context/AuthContext"
 
 export default function GettingStarted() {
-    const { user, userLevel, setUserLevel, branch, setBranch, showVideo, setShowVideo } = useContext(AppContext)
+    const { userLevel, setUserLevel, branch, setBranch, showVideo, setShowVideo } = useContext(AppContext)
+    const { email, claims } = useContext(AuthContext)
     const [step, setStep] = useState("step0")
 
     // Ensure that video is visible for this.  Delay setShowVideo to avoid React warning
@@ -43,16 +45,16 @@ export default function GettingStarted() {
                 </div>
             </TaskStep>
             <TaskStep step="step2">
-                {user &&
+                {email &&
                     <div>
-                        <h1>Good to see you, {user.email}!</h1>
-                        <p>You're logged into your Case Parts account: {user.custId}</p>
+                        <h1>Good to see you, {email}!</h1>
+                        <p>You're logged into your Case Parts account: {claims.Customer.CustId}</p>
                         <div className="pad center">
                             <button onClick={() => setStep("step3")}>Continue Tutorial</button>
                         </div>
                     </div>
                 }
-                {!user &&
+                {!email &&
                     <div>
                         <h1>Which best describes you?</h1>
                         <div className="radioList">

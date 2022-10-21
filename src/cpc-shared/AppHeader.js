@@ -2,9 +2,11 @@ import React, { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import Burger from "./Burger"
 import { AppContext } from "../context/AppContext"
+import { AuthContext } from "../context/AuthContext"
 
 export default function AppHeader({ appname, menu }) {
-    const { cart, user, showVideo, setShowVideo } = useContext(AppContext)
+    const { cart, showVideo, setShowVideo } = useContext(AppContext)
+    const { email } = useContext(AuthContext)
     const navigate = useNavigate()
 
     return (
@@ -23,8 +25,8 @@ export default function AppHeader({ appname, menu }) {
                 <i className="fa-regular fa-cart-shopping"></i>
             </button>
             {!showVideo && <button onClick={() => setShowVideo(true)}><i className="fa-brands fa-youtube" /> </button>}
-            {user && <button onClick={() => navigate("/account")}><i className="fa-solid fa-user" /></button>}
-            {!user && <div className="loginButton" onClick={() => navigate("/login")}>Login</div>}
+            {email && <button onClick={() => navigate("/account")}><i className="fa-solid fa-user" /></button>}
+            {!email && <div className="loginButton" onClick={() => navigate("/login")}>Login</div>}
         </header>
     )
 }

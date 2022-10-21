@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import AppState from "./context/AppState"
+import AuthProvider from './context/AuthProvider'
 import Layout from './layout/Main'
 import Welcome from './routes/Welcome'
 import HomePage from './routes/HomePage'
@@ -22,31 +23,35 @@ import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
     return (
-        <AppState>
-            <Router>
-                <ScrollToTop />
-                <Routes>
-                    <Route path="/" element={<Layout />}>
-                        <Route path="login" element={<Login />} />
-                        <Route path="account" element={<Account />} />
-                        <Route path="getting-started" element={<GettingStarted />} />
-                        <Route path="welcome" element={<Welcome />} />
-                        <Route path="branch/mpk" element={<MPK />} />
-                        <Route path="branch/stl" element={<STL />} />
-                        <Route path="branch/sea" element={<SEA />} />
-                        <Route path="search/:query" element={<Search />} />
-                        <Route path="part/:partId" element={<Part />} />
-                        <Route path="cart" element={<Cart />} />
-                        <Route path="custom" element={<CustomParts />} />
-                        <Route path="custom/gasket" element={<Gasket />} />
-                        <Route path="info/orderlink" element={<OrderLink />} />
-                        <Route path="purchase" element={<Purchase />} />
-                        <Route path="quote" element={<Quote />} />
-                        <Route index element={<HomePage />} />
-                        <Route path="*" element={<Navigate replace to="/" />} />
-                    </Route>
-                </Routes>
-            </Router >
-        </AppState>
+
+        <Router>
+            <AuthProvider>
+                <AppState>
+                    <ScrollToTop />
+                    <Routes>
+                        <Route path="/" element={<Layout />}>
+                            <Route path="login" element={<Login />} />
+                            <Route path="account" element={<Account />} />
+                            <Route path="getting-started" element={<GettingStarted />} />
+                            <Route path="welcome" element={<Welcome />} />
+                            <Route path="branch/mpk" element={<MPK />} />
+                            <Route path="branch/stl" element={<STL />} />
+                            <Route path="branch/sea" element={<SEA />} />
+                            <Route path="search/:query" element={<Search />} />
+                            <Route path="part/:partId" element={<Part />} />
+                            <Route path="cart" element={<Cart />} />
+                            <Route path="custom" element={<CustomParts />} />
+                            <Route path="custom/gasket" element={<Gasket />} />
+                            <Route path="info/orderlink" element={<OrderLink />} />
+                            <Route path="purchase" element={<Purchase />} />
+                            <Route path="quote" element={<Quote />} />
+                            <Route index element={<HomePage />} />
+                            <Route path="*" element={<Navigate replace to="/" />} />
+                        </Route>
+                    </Routes>
+                </AppState>
+            </AuthProvider>
+        </Router >
+
     )
 }
