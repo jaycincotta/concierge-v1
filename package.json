@@ -17,7 +17,8 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.5.2",
     "web-vitals": "^2.1.4",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "the-new-css-reset": "^1.7.3"
   },
   "scripts": {
     "start": "react-scripts start",
