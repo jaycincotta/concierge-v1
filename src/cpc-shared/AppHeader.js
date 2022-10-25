@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Burger from "./Burger"
 import { AppContext } from "../context/AppContext"
 import { AuthContext } from "../context/AuthContext"
+import { Assets } from "../AppSettings"
 
 export default function AppHeader({ appname, menu }) {
     const { cart, showVideo, setShowVideo } = useContext(AppContext)
@@ -14,13 +15,13 @@ export default function AppHeader({ appname, menu }) {
             <div className="black-padding" />
             <div className="page-width">
                 <div className="cpc-logo" onClick={() => navigate("/")}>
-                    <img className="cpc-logo-front" src="/assets/logo-front.svg" alt="" />
+                    <img className="cpc-logo-front" src={Assets("logo-front.svg")} alt="" />
                     <div className="cpc-appname">
                         <div className="cpc-company">CaseParts</div>
                         {appname}
                     </div>
                 </div>
-                <img className="cpc-logo-back" src="/assets/logo-back.svg" alt="" />
+                <img className="cpc-logo-back" src={Assets("logo-back.svg")} alt="" />
                 <Burger menu={menu} />
                 <button onClick={() => { if (cart.length > 0) navigate("/cart") }}>
                     <div className={"overlay " + (cart.length > 0 ? "show" : "hide")}>{cart.length}</div>

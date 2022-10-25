@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { Image } from "../AppSettings";
 function CustomItem({ icon, text, url }) {
   return (
-    <Link className="customItemButton" to={url}>
-      <img src={`/images/${icon}`} alt={text} />
-      <div>{text}</div>
-    </Link>
+    <>
+      <Link className="customItemButton" to={url}>
+        <img src={Image(icon)} alt={text} />
+        <div>{text}</div>
+      </Link>
+    </>
   );
 }
+//`/concierge/images/${icon}`
 export default function CustomItems() {
   return (
     <div className="customItemMenu">

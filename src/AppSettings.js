@@ -15,5 +15,7 @@ const AppSettings = {
       ImpersonateSearch: API("test/search?val=")
     }
 }
+export function Image(image) { return "/concierge/images/" + image }
+export function Assets(image) { return "/concierge/assets/" + image}
 
 export default AppSettings

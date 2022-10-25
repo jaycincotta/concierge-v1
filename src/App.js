@@ -24,7 +24,7 @@ import ScrollToTop from './components/ScrollToTop'
 export default function App() {
     return (
 
-        <Router>
+        <Router basename="concierge">
             <AuthProvider>
                 <AppState>
                     <ScrollToTop />
