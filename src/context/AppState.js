@@ -1,6 +1,6 @@
 import React from "react"
 import { AppContext } from "./AppContext"
-import useLocalStorage from "../cpc-shared/useLocalStorage"
+import useLocalStorage from "../hooks/useLocalStorage"
 
 export default function AppState({ children }) {
     const [cart, setCart] = useLocalStorage("cart", [])

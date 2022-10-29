@@ -1,5 +1,5 @@
 import React from "react"
-import useLocalStorage from "../cpc-shared/useLocalStorage"
+import useLocalStorage from "../hooks/useLocalStorage"
 
 export default function ShippingInfo() {
     const [street, setStreet] = useLocalStorage("shipStreet", "")

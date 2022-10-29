@@ -3,7 +3,7 @@ import ResearchForm from "../components/ResearchForm"
 import { Link, Navigate, useNavigate } from "react-router-dom"
 import Task from "../layout/Task"
 import TaskStep from "../layout/TaskStep"
-import useLocalStorage from "../cpc-shared/useLocalStorage"
+import useLocalStorage from "../hooks/useLocalStorage"
 import CustomItems from "../components/CustomItems"
 
 const LearnMore = ({ url }) => <Link className="learnMore" to={url}>Learn More</Link>
